@@ -1,9 +1,0 @@
-
-> @workspace/mobile@0.0.0 dev /home/runner/workspace/mobile
-> npx expo start --web
-
-[1G[0K⠙[1G[0K⠹[1G[0K⠸[1G[0K[1G[0JNeed to install the following packages:
-expo@56.0.12
-Ok to proceed? (y) [20G[41m[30m ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL [39m[49m [31m@workspace/mobile@0.0.0 dev: `npx expo start --web`[39m
-[31mCommand failed with signal "SIGTERM"[39m
-[43m[30m WARN [39m[49m  Local package.json exists, but node_modules missing, did you mean to install?
