@@ -1,0 +1,58 @@
+
+════════════════════════════════════════════════════════════
+  Federated Organization Integration Platform v4.0.0
+════════════════════════════════════════════════════════════
+  Server:     http://localhost:3001
+  Platform Key: platform-admin-key
+
+  ┌─ Organizations ──────────────────────────────────────┐
+  │ university   Tech Valley University              │
+  │              Entities:   7 (6 active)  API Key: key-uni-mock-001  │
+  │              Base URL: /orgs/university/api/v1                              │
+  │ government   Ethiopian Civil Service Agency      │
+  │              Entities:   5 (4 active)  API Key: key-gov-mock-001  │
+  │              Base URL: /orgs/government/api/v1                              │
+  │ employer     Pan-African Tech Corp               │
+  │              Entities:   5 (4 active)  API Key: key-emp-mock-001  │
+  │              Base URL: /orgs/employer/api/v1                              │
+  │ hospital     MedCity General Hospital            │
+  │              Entities:   7 (7 active)  API Key: key-hos-mock-001  │
+  │              Base URL: /orgs/hospital/api/v1                              │
+  │ financial    Union Bank of Africa                │
+  │              Entities:   7 (6 active)  API Key: key-fin-mock-001  │
+  │              Base URL: /orgs/financial/api/v1                              │
+  └──────────────────────────────────────────────────────┘
+
+  📊 Platform Summary:
+     Organizations: 5
+     Total Entities: 31
+     Total Credentials: 27
+
+  🔌 Unified Platform Endpoints:
+     GET  /api/v1/health                    — Platform health
+     GET  /api/v1/registry/organizations    — Service discovery
+     GET  /api/v1/search                    — Cross-org search
+     GET  /api/v1/unified/entities          — Aggregated entity view
+     GET  /api/v1/events                    — Global event stream
+     POST /api/v1/webhooks/ingest           — Event ingestion
+     GET  /api/v1/dashboard                 — Platform stats
+
+  🏛️  Per-Organization API (standardized contract):
+     Replace {org} with: university, government, employer, hospital, financial
+
+     GET  /orgs/{org}/api/v1/health                    — Org health
+     GET  /orgs/{org}/api/v1/organizations/profile     — Org profile
+     GET  /orgs/{org}/api/v1/entities/search           — Search entities
+     GET  /orgs/{org}/api/v1/entities/:id              — Entity detail
+     GET  /orgs/{org}/api/v1/credentials               — List credentials
+     POST /orgs/{org}/api/v1/credentials/issue         — Issue credential
+     POST /orgs/{org}/api/v1/credentials/:id/revoke    — Revoke credential
+     POST /orgs/{org}/api/v1/webhooks/events           — Send webhook event
+     GET  /orgs/{org}/api/v1/events                    — Event log
+
+  🔐 Authentication:
+     Platform: X-API-Key: platform-admin-key
+     Per-Org:  Use each org's individual API key shown above
+
+  📖 Legacy endpoints (Phase 7-9 compat) maintained at /api/*
+

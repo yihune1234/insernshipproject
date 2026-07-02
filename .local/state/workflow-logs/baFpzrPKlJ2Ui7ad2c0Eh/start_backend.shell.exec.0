@@ -1,0 +1,60 @@
+Performing system checks...
+
+/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/fields.py:990: UserWarning: max_value should be a Decimal instance.
+  warnings.warn("max_value should be a Decimal instance.")
+/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/fields.py:992: UserWarning: min_value should be a Decimal instance.
+  warnings.warn("min_value should be a Decimal instance.")
+System check identified no issues (0 silenced).
+June 22, 2026 - 17:59:21
+Django version 5.1.4, using settings 'config.settings.development'
+Starting development server at http://localhost:8000/
+Quit the server with CONTROL-C.
+
+WARNING 2026-06-22 17:59:23,978 log 15410 140238160656064 Not Found: /
+WARNING 2026-06-22 17:59:23,979 basehttp 15410 140238160656064 "GET / HTTP/1.1" 404 4673
+WARNING 2026-06-22 17:59:24,121 log 15410 140238160656064 Not Found: /favicon.ico
+WARNING 2026-06-22 17:59:24,121 basehttp 15410 140238160656064 "GET /favicon.ico HTTP/1.1" 404 4724
+ERROR 2026-06-22 17:59:39,471 log 15410 140238151214784 Internal Server Error: /api/wallet/request-catalog/
+Traceback (most recent call last):
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/backend/apps/holder/views/credentials.py", line 77, in get
+    from apps.credentials.models import CredentialType
+ImportError: cannot import name 'CredentialType' from 'apps.credentials.models' (/home/runner/workspace/backend/apps/credentials/models/__init__.py). Did you mean: 'credentials'?
+ERROR 2026-06-22 17:59:39,476 basehttp 15410 140238151214784 "GET /api/wallet/request-catalog/ HTTP/1.1" 500 137711
+WARNING 2026-06-22 17:59:39,512 log 15410 140238151214784 Method Not Allowed: /api/notifications/mark-all-read/
+WARNING 2026-06-22 17:59:39,512 basehttp 15410 140238151214784 "GET /api/notifications/mark-all-read/ HTTP/1.1" 405 87
+WARNING 2026-06-22 17:59:39,528 log 15410 140238151214784 Not Found: /api/wallet/shares/enable/
+WARNING 2026-06-22 17:59:39,529 basehttp 15410 140238151214784 "POST /api/wallet/shares/enable/ HTTP/1.1" 404 49
+Performing system checks...
+
+/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/fields.py:990: UserWarning: max_value should be a Decimal instance.
+  warnings.warn("max_value should be a Decimal instance.")
+/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/fields.py:992: UserWarning: min_value should be a Decimal instance.
+  warnings.warn("min_value should be a Decimal instance.")
+System check identified no issues (0 silenced).
+June 22, 2026 - 18:01:14
+Django version 5.1.4, using settings 'config.settings.development'
+Starting development server at http://localhost:8000/
+Quit the server with CONTROL-C.
+

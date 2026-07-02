@@ -1,0 +1,91 @@
+Performing system checks...
+
+/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/fields.py:990: UserWarning: max_value should be a Decimal instance.
+  warnings.warn("max_value should be a Decimal instance.")
+/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/fields.py:992: UserWarning: min_value should be a Decimal instance.
+  warnings.warn("min_value should be a Decimal instance.")
+System check identified no issues (0 silenced).
+June 22, 2026 - 17:45:33
+Django version 5.1.4, using settings 'config.settings.development'
+Starting development server at http://localhost:8000/
+Quit the server with CONTROL-C.
+
+INFO 2026-06-22 17:45:46,141 _client 10696 140219579889344 HTTP Request: GET http://localhost:3001/university/members "HTTP/1.1 200 OK"
+INFO 2026-06-22 17:45:46,398 _client 10696 140219579889344 HTTP Request: GET http://localhost:3001/employer/employees "HTTP/1.1 200 OK"
+INFO 2026-06-22 17:45:46,640 _client 10696 140219579889344 HTTP Request: GET http://localhost:3001/university/members "HTTP/1.1 200 OK"
+WARNING 2026-06-22 17:56:05,300 log 10696 140219579889344 Not Found: /api/auth/token/
+WARNING 2026-06-22 17:56:05,304 basehttp 10696 140219579889344 "POST /api/auth/token/ HTTP/1.1" 404 6872
+WARNING 2026-06-22 17:56:13,083 log 10696 140219579889344 Not Found: /api/auth/token/
+WARNING 2026-06-22 17:56:13,083 basehttp 10696 140219579889344 "POST /api/auth/token/ HTTP/1.1" 404 6872
+WARNING 2026-06-22 17:56:23,850 log 10696 140219579889344 Not Found: /api/auth/token/
+WARNING 2026-06-22 17:56:23,851 basehttp 10696 140219579889344 "POST /api/auth/token/ HTTP/1.1" 404 6872
+WARNING 2026-06-22 17:56:34,126 log 10696 140219579889344 Not Found: /api/auth/token/
+WARNING 2026-06-22 17:56:34,126 basehttp 10696 140219579889344 "POST /api/auth/token/ HTTP/1.1" 404 6872
+WARNING 2026-06-22 17:56:34,132 log 10696 140219579889344 Bad Request: /api/auth/login/
+WARNING 2026-06-22 17:56:34,133 basehttp 10696 140219579889344 "POST /api/auth/login/ HTTP/1.1" 400 64
+WARNING 2026-06-22 17:56:34,138 log 10696 140219579889344 Not Found: /api/auth/jwt/token/
+WARNING 2026-06-22 17:56:34,139 basehttp 10696 140219579889344 "POST /api/auth/jwt/token/ HTTP/1.1" 404 6884
+WARNING 2026-06-22 17:57:14,894 log 10696 140219579889344 Not Found: /api/wallet/request-catalog/
+WARNING 2026-06-22 17:57:14,895 basehttp 10696 140219579889344 "GET /api/wallet/request-catalog/ HTTP/1.1" 404 7481
+WARNING 2026-06-22 17:57:14,912 log 10696 140219579889344 Not Found: /api/wallet/shares/enable/
+WARNING 2026-06-22 17:57:14,913 basehttp 10696 140219579889344 "GET /api/wallet/shares/enable/ HTTP/1.1" 404 38
+Performing system checks...
+
+/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/fields.py:990: UserWarning: max_value should be a Decimal instance.
+  warnings.warn("max_value should be a Decimal instance.")
+/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/fields.py:992: UserWarning: min_value should be a Decimal instance.
+  warnings.warn("min_value should be a Decimal instance.")
+System check identified no issues (0 silenced).
+June 22, 2026 - 17:58:47
+Django version 5.1.4, using settings 'config.settings.development'
+Starting development server at http://localhost:8000/
+Quit the server with CONTROL-C.
+
+Performing system checks...
+
+/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/fields.py:990: UserWarning: max_value should be a Decimal instance.
+  warnings.warn("max_value should be a Decimal instance.")
+/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/fields.py:992: UserWarning: min_value should be a Decimal instance.
+  warnings.warn("min_value should be a Decimal instance.")
+System check identified no issues (0 silenced).
+June 22, 2026 - 17:58:53
+Django version 5.1.4, using settings 'config.settings.development'
+Starting development server at http://localhost:8000/
+Quit the server with CONTROL-C.
+
+Performing system checks...
+
+/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/fields.py:990: UserWarning: max_value should be a Decimal instance.
+  warnings.warn("max_value should be a Decimal instance.")
+/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/fields.py:992: UserWarning: min_value should be a Decimal instance.
+  warnings.warn("min_value should be a Decimal instance.")
+System check identified no issues (0 silenced).
+June 22, 2026 - 17:59:10
+Django version 5.1.4, using settings 'config.settings.development'
+Starting development server at http://localhost:8000/
+Quit the server with CONTROL-C.
+
+Performing system checks...
+
+/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/fields.py:990: UserWarning: max_value should be a Decimal instance.
+  warnings.warn("max_value should be a Decimal instance.")
+/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/fields.py:992: UserWarning: min_value should be a Decimal instance.
+  warnings.warn("min_value should be a Decimal instance.")
+System check identified no issues (0 silenced).
+June 22, 2026 - 17:59:12
+Django version 5.1.4, using settings 'config.settings.development'
+Starting development server at http://localhost:8000/
+Quit the server with CONTROL-C.
+
+Performing system checks...
+
+/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/fields.py:990: UserWarning: max_value should be a Decimal instance.
+  warnings.warn("max_value should be a Decimal instance.")
+/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/fields.py:992: UserWarning: min_value should be a Decimal instance.
+  warnings.warn("min_value should be a Decimal instance.")
+System check identified no issues (0 silenced).
+June 22, 2026 - 17:59:17
+Django version 5.1.4, using settings 'config.settings.development'
+Starting development server at http://localhost:8000/
+Quit the server with CONTROL-C.
+

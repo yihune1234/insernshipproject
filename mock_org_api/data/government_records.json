@@ -1,0 +1,72 @@
+[
+  {
+    "national_id": "NID-1234567890",
+    "record_number": "GOV-2024-001",
+    "full_name": "Amara Osei",
+    "email": "amara.osei@gov.example.et",
+    "phone": "+251911000001",
+    "department": "Ministry of Finance",
+    "position": "Senior Analyst",
+    "employee_id": "MF-001234",
+    "clearance_level": "standard",
+    "status": "active",
+    "start_date": "2019-06-01",
+    "document_type": "employment_certificate"
+  },
+  {
+    "national_id": "NID-0987654321",
+    "record_number": "GOV-2024-002",
+    "full_name": "Kwabena Mensah",
+    "email": "kwabena.mensah@gov.example.et",
+    "phone": "+251911000002",
+    "department": "Ministry of Health",
+    "position": "Public Health Officer",
+    "employee_id": "MH-002345",
+    "clearance_level": "standard",
+    "status": "active",
+    "start_date": "2020-03-15",
+    "document_type": "employment_certificate"
+  },
+  {
+    "national_id": "NID-1111111111",
+    "record_number": "GOV-2024-003",
+    "full_name": "Aba Ansah",
+    "email": "aba.ansah@gov.example.et",
+    "phone": "+251911000003",
+    "department": "Ministry of Education",
+    "position": "Policy Advisor",
+    "employee_id": "ME-003456",
+    "clearance_level": "confidential",
+    "status": "active",
+    "start_date": "2018-01-10",
+    "document_type": "employment_certificate"
+  },
+  {
+    "national_id": "NID-5555555555",
+    "record_number": "GOV-2024-010",
+    "full_name": "Tesfaye Alemu",
+    "email": "tesfaye.alemu@gov.example.et",
+    "phone": "+251911000010",
+    "department": "Ministry of Trade",
+    "position": "Trade Inspector",
+    "employee_id": "MT-010123",
+    "clearance_level": "standard",
+    "status": "active",
+    "start_date": "2021-07-01",
+    "document_type": "employment_certificate"
+  },
+  {
+    "national_id": "NID-6666666666",
+    "record_number": "GOV-2023-050",
+    "full_name": "Meron Haile",
+    "email": "meron.haile@gov.example.et",
+    "phone": "+251911000050",
+    "department": "Ministry of Justice",
+    "position": "Legal Officer",
+    "employee_id": "MJ-050789",
+    "clearance_level": "standard",
+    "status": "suspended",
+    "start_date": "2017-11-20",
+    "document_type": "employment_certificate"
+  }
+]

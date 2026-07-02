@@ -1,0 +1,60 @@
+Performing system checks...
+
+/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/fields.py:990: UserWarning: max_value should be a Decimal instance.
+  warnings.warn("max_value should be a Decimal instance.")
+/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/fields.py:992: UserWarning: min_value should be a Decimal instance.
+  warnings.warn("min_value should be a Decimal instance.")
+System check identified no issues (0 silenced).
+June 22, 2026 - 17:26:46
+Django version 5.1.4, using settings 'config.settings.development'
+Starting development server at http://localhost:8000/
+Quit the server with CONTROL-C.
+
+Performing system checks...
+
+/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/fields.py:990: UserWarning: max_value should be a Decimal instance.
+  warnings.warn("max_value should be a Decimal instance.")
+/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/fields.py:992: UserWarning: min_value should be a Decimal instance.
+  warnings.warn("min_value should be a Decimal instance.")
+System check identified no issues (0 silenced).
+June 22, 2026 - 17:42:32
+Django version 5.1.4, using settings 'config.settings.development'
+Starting development server at http://localhost:8000/
+Quit the server with CONTROL-C.
+
+Performing system checks...
+
+/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/fields.py:990: UserWarning: max_value should be a Decimal instance.
+  warnings.warn("max_value should be a Decimal instance.")
+/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/fields.py:992: UserWarning: min_value should be a Decimal instance.
+  warnings.warn("min_value should be a Decimal instance.")
+System check identified no issues (0 silenced).
+June 22, 2026 - 17:43:11
+Django version 5.1.4, using settings 'config.settings.development'
+Starting development server at http://localhost:8000/
+Quit the server with CONTROL-C.
+
+Performing system checks...
+
+/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/fields.py:990: UserWarning: max_value should be a Decimal instance.
+  warnings.warn("max_value should be a Decimal instance.")
+/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/fields.py:992: UserWarning: min_value should be a Decimal instance.
+  warnings.warn("min_value should be a Decimal instance.")
+System check identified no issues (0 silenced).
+June 22, 2026 - 17:43:22
+Django version 5.1.4, using settings 'config.settings.development'
+Starting development server at http://localhost:8000/
+Quit the server with CONTROL-C.
+
+Performing system checks...
+
+/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/fields.py:990: UserWarning: max_value should be a Decimal instance.
+  warnings.warn("max_value should be a Decimal instance.")
+/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/fields.py:992: UserWarning: min_value should be a Decimal instance.
+  warnings.warn("min_value should be a Decimal instance.")
+System check identified no issues (0 silenced).
+June 22, 2026 - 17:43:26
+Django version 5.1.4, using settings 'config.settings.development'
+Starting development server at http://localhost:8000/
+Quit the server with CONTROL-C.
+

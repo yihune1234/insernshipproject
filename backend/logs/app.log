@@ -1,0 +1,826 @@
+WARNING 2026-06-26 00:03:54,419 log 78299 133471007667904 Unauthorized: /api/v1/integration/configs/
+WARNING 2026-06-26 00:03:54,420 basehttp 78299 133471007667904 "GET /api/v1/integration/configs/ HTTP/1.1" 401 275
+WARNING 2026-06-26 00:04:01,502 log 78299 133471007667904 Unauthorized: /api/v1/integration/configs/
+WARNING 2026-06-26 00:04:01,503 basehttp 78299 133471007667904 "GET /api/v1/integration/configs/ HTTP/1.1" 401 275
+WARNING 2026-06-26 00:04:17,967 log 78299 133471007667904 Unauthorized: /api/v1/integration/configs/
+WARNING 2026-06-26 00:04:17,969 basehttp 78299 133471007667904 "GET /api/v1/integration/configs/ HTTP/1.1" 401 275
+WARNING 2026-06-26 00:04:18,079 log 78299 133471007667904 Not Found: /api/v1/integration/configs//sync/
+WARNING 2026-06-26 00:04:18,080 basehttp 78299 133471007667904 "POST /api/v1/integration/configs//sync/ HTTP/1.1" 404 9838
+WARNING 2026-06-26 00:04:24,705 log 78299 133471007667904 Unauthorized: /api/v1/integration/configs/
+WARNING 2026-06-26 00:04:24,707 basehttp 78299 133471007667904 "GET /api/v1/integration/configs/ HTTP/1.1" 401 275
+WARNING 2026-06-26 00:04:31,800 log 78299 133471007667904 Unauthorized: /api/v1/integration/configs/
+WARNING 2026-06-26 00:04:31,800 basehttp 78299 133471007667904 "GET /api/v1/integration/configs/ HTTP/1.1" 401 275
+WARNING 2026-06-26 00:04:49,821 log 78299 133471007667904 Not Found: /api/v1/integration/configs/addf929d-d6dc-4cc0-9524-d66dcf2a5e20/sync/
+WARNING 2026-06-26 00:04:49,822 basehttp 78299 133471007667904 "POST /api/v1/integration/configs/addf929d-d6dc-4cc0-9524-d66dcf2a5e20/sync/ HTTP/1.1" 404 51
+ERROR 2026-06-26 00:06:10,855 log 78299 133471007667904 Internal Server Error: /api/v1/wallet/presentations/
+Traceback (most recent call last):
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py", line 2761, in to_python
+    return uuid.UUID(**{input_form: value})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/uuid.py", line 178, in __init__
+    raise ValueError('badly formed hexadecimal UUID string')
+ValueError: badly formed hexadecimal UUID string
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/apps/holder/views/presentation.py", line 20, in post
+    pres = PresentationService.create(request.user, s.validated_data["credentials"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/apps/holder/services/presentation_service.py", line 46, in create
+    cred = Credential.objects.get(id=item["credential_id"], holder=holder)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 635, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1609, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1641, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1555, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1385, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/db/models/lookups.py", line 30, in __init__
+    self.rhs = self.get_prep_lookup()
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/db/models/lookups.py", line 369, in get_prep_lookup
+    return super().get_prep_lookup()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/db/models/lookups.py", line 88, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py", line 2745, in get_prep_value
+    return self.to_python(value)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py", line 2763, in to_python
+    raise exceptions.ValidationError(
+django.core.exceptions.ValidationError: ['“AAU-CRED-DEMO-2026-001” is not a valid UUID.']
+ERROR 2026-06-26 00:06:10,867 basehttp 78299 133471007667904 "POST /api/v1/wallet/presentations/ HTTP/1.1" 500 193228
+ERROR 2026-06-26 00:06:21,320 log 78299 133471007667904 Internal Server Error: /api/v1/wallet/presentations/
+Traceback (most recent call last):
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py", line 2761, in to_python
+    return uuid.UUID(**{input_form: value})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/uuid.py", line 178, in __init__
+    raise ValueError('badly formed hexadecimal UUID string')
+ValueError: badly formed hexadecimal UUID string
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/apps/holder/views/presentation.py", line 20, in post
+    pres = PresentationService.create(request.user, s.validated_data["credentials"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/apps/holder/services/presentation_service.py", line 46, in create
+    cred = Credential.objects.get(id=item["credential_id"], holder=holder)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 635, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1609, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1641, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1555, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1385, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/db/models/lookups.py", line 30, in __init__
+    self.rhs = self.get_prep_lookup()
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/db/models/lookups.py", line 369, in get_prep_lookup
+    return super().get_prep_lookup()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/db/models/lookups.py", line 88, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py", line 2745, in get_prep_value
+    return self.to_python(value)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py", line 2763, in to_python
+    raise exceptions.ValidationError(
+django.core.exceptions.ValidationError: ['“AAU-CRED-DEMO-2026-001” is not a valid UUID.']
+ERROR 2026-06-26 00:06:21,323 basehttp 78299 133471007667904 "POST /api/v1/wallet/presentations/ HTTP/1.1" 500 193228
+ERROR 2026-06-26 00:06:31,202 log 78299 133471007667904 Internal Server Error: /api/v1/wallet/presentations/
+Traceback (most recent call last):
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py", line 2761, in to_python
+    return uuid.UUID(**{input_form: value})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/uuid.py", line 178, in __init__
+    raise ValueError('badly formed hexadecimal UUID string')
+ValueError: badly formed hexadecimal UUID string
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/apps/holder/views/presentation.py", line 20, in post
+    pres = PresentationService.create(request.user, s.validated_data["credentials"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/apps/holder/services/presentation_service.py", line 46, in create
+    cred = Credential.objects.get(id=item["credential_id"], holder=holder)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 635, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1609, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1641, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1555, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1385, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/db/models/lookups.py", line 30, in __init__
+    self.rhs = self.get_prep_lookup()
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/db/models/lookups.py", line 369, in get_prep_lookup
+    return super().get_prep_lookup()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/db/models/lookups.py", line 88, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py", line 2745, in get_prep_value
+    return self.to_python(value)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py", line 2763, in to_python
+    raise exceptions.ValidationError(
+django.core.exceptions.ValidationError: ['“AAU-CRED-DEMO-2026-001” is not a valid UUID.']
+ERROR 2026-06-26 00:06:31,208 basehttp 78299 133471007667904 "POST /api/v1/wallet/presentations/ HTTP/1.1" 500 193228
+WARNING 2026-06-26 00:26:18,461 log 78299 133471007667904 Not Found: /api/auth/login/
+WARNING 2026-06-26 00:26:18,469 basehttp 78299 133471007667904 "POST /api/auth/login/ HTTP/1.1" 404 4779
+WARNING 2026-06-26 00:26:34,727 log 78299 133471007667904 Not Found: /api/auth/login/
+WARNING 2026-06-26 00:26:34,752 basehttp 78299 133471007667904 "POST /api/auth/login/ HTTP/1.1" 404 4779
+WARNING 2026-06-26 00:26:46,343 log 78299 133471007667904 Not Found: /api/auth/login/
+WARNING 2026-06-26 00:26:46,346 basehttp 78299 133471007667904 "POST /api/auth/login/ HTTP/1.1" 404 4779
+WARNING 2026-06-26 13:28:25,441 log 6039 129868484310720 Not Found: /api/auth/login/
+WARNING 2026-06-26 13:28:25,442 basehttp 6039 129868484310720 "POST /api/auth/login/ HTTP/1.1" 404 4779
+WARNING 2026-06-26 13:33:11,596 log 6039 129868385736384 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 13:33:11,597 basehttp 6039 129868385736384 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDcwODkxLCJpYXQiOjE3ODI0Njk5OTEsImp0aSI6IjIyZDU1ZjA0NDQ4YTQ5NmU5MWU3Yjc3Yjk4NjgyMDZkIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.sQG3_BQzpmfn6MYTbhN2ifQ7P-EBc3GzZcKb1MhfRt8 HTTP/1.1" 406 110
+WARNING 2026-06-26 13:33:11,643 log 6039 129868402521792 Forbidden: /api/v1/integration/analytics/
+WARNING 2026-06-26 13:33:11,653 log 6039 129868377343680 Not Found: /api/v1/issuer/notifications/unread-count/
+WARNING 2026-06-26 13:33:11,654 basehttp 6039 129868402521792 "GET /api/v1/integration/analytics/ HTTP/1.1" 403 109
+WARNING 2026-06-26 13:33:11,658 basehttp 6039 129868377343680 "GET /api/v1/issuer/notifications/unread-count/ HTTP/1.1" 404 4856
+WARNING 2026-06-26 13:33:11,707 log 6039 129868385736384 Not Found: /api/v1/issuer/notifications/unread-count/
+WARNING 2026-06-26 13:33:11,707 basehttp 6039 129868385736384 "GET /api/v1/issuer/notifications/unread-count/ HTTP/1.1" 404 4856
+WARNING 2026-06-26 13:33:11,708 log 6039 129868402521792 Forbidden: /api/v1/integration/analytics/
+WARNING 2026-06-26 13:33:11,709 basehttp 6039 129868402521792 "GET /api/v1/integration/analytics/ HTTP/1.1" 403 109
+WARNING 2026-06-26 13:33:16,648 log 6039 129868394129088 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 13:33:16,650 basehttp 6039 129868394129088 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDcwODkxLCJpYXQiOjE3ODI0Njk5OTEsImp0aSI6IjIyZDU1ZjA0NDQ4YTQ5NmU5MWU3Yjc3Yjk4NjgyMDZkIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.sQG3_BQzpmfn6MYTbhN2ifQ7P-EBc3GzZcKb1MhfRt8 HTTP/1.1" 406 110
+WARNING 2026-06-26 13:33:18,646 log 6039 129868394129088 Forbidden: /api/v1/integration/analytics/
+WARNING 2026-06-26 13:33:18,654 basehttp 6039 129868394129088 "GET /api/v1/integration/analytics/ HTTP/1.1" 403 109
+WARNING 2026-06-26 13:33:18,672 log 6039 129868368950976 Forbidden: /api/v1/integration/analytics/
+WARNING 2026-06-26 13:33:18,676 basehttp 6039 129868368950976 "GET /api/v1/integration/analytics/ HTTP/1.1" 403 109
+WARNING 2026-06-26 13:33:23,340 log 6039 129868484310720 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 13:33:23,392 log 6039 129868368950976 Not Found: /api/v1/issuer/notifications/unread-count/
+WARNING 2026-06-26 13:33:23,400 basehttp 6039 129868368950976 "GET /api/v1/issuer/notifications/unread-count/ HTTP/1.1" 404 4856
+WARNING 2026-06-26 13:33:23,426 log 6039 129868385736384 Not Found: /api/v1/issuer/notifications/unread-count/
+WARNING 2026-06-26 13:33:23,427 basehttp 6039 129868385736384 "GET /api/v1/issuer/notifications/unread-count/ HTTP/1.1" 404 4856
+WARNING 2026-06-26 13:33:27,798 log 6039 129868484310720 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 13:33:27,817 basehttp 6039 129868484310720 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDcwODkxLCJpYXQiOjE3ODI0Njk5OTEsImp0aSI6IjIyZDU1ZjA0NDQ4YTQ5NmU5MWU3Yjc3Yjk4NjgyMDZkIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.sQG3_BQzpmfn6MYTbhN2ifQ7P-EBc3GzZcKb1MhfRt8 HTTP/1.1" 406 110
+WARNING 2026-06-26 13:33:27,831 log 6039 129868394129088 Forbidden: /api/v1/integration/analytics/
+WARNING 2026-06-26 13:33:27,858 basehttp 6039 129868394129088 "GET /api/v1/integration/analytics/ HTTP/1.1" 403 109
+WARNING 2026-06-26 13:33:27,860 log 6039 129868385736384 Not Found: /api/v1/issuer/notifications/unread-count/
+WARNING 2026-06-26 13:33:27,861 basehttp 6039 129868385736384 "GET /api/v1/issuer/notifications/unread-count/ HTTP/1.1" 404 4856
+WARNING 2026-06-26 13:33:27,894 log 6039 129868385736384 Forbidden: /api/v1/integration/analytics/
+WARNING 2026-06-26 13:33:27,910 basehttp 6039 129868385736384 "GET /api/v1/integration/analytics/ HTTP/1.1" 403 109
+WARNING 2026-06-26 13:33:27,918 log 6039 129868394129088 Not Found: /api/v1/issuer/notifications/unread-count/
+WARNING 2026-06-26 13:33:27,922 basehttp 6039 129868394129088 "GET /api/v1/issuer/notifications/unread-count/ HTTP/1.1" 404 4856
+WARNING 2026-06-26 13:33:32,832 log 6039 129868402521792 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 13:33:32,833 basehttp 6039 129868402521792 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDcwODkxLCJpYXQiOjE3ODI0Njk5OTEsImp0aSI6IjIyZDU1ZjA0NDQ4YTQ5NmU5MWU3Yjc3Yjk4NjgyMDZkIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.sQG3_BQzpmfn6MYTbhN2ifQ7P-EBc3GzZcKb1MhfRt8 HTTP/1.1" 406 110
+WARNING 2026-06-26 13:33:33,307 log 6039 129868402521792 Not Found: /api/v1/integration/configs/undefined/sync/
+WARNING 2026-06-26 13:33:33,307 basehttp 6039 129868402521792 "POST /api/v1/integration/configs/undefined/sync/ HTTP/1.1" 404 9865
+WARNING 2026-06-26 13:33:42,857 log 6039 129868385736384 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 13:33:42,866 log 6039 129868377343680 Forbidden: /api/v1/integration/analytics/
+WARNING 2026-06-26 13:33:42,870 basehttp 6039 129868377343680 "GET /api/v1/integration/analytics/ HTTP/1.1" 403 109
+WARNING 2026-06-26 13:33:42,874 basehttp 6039 129868385736384 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDcwODkxLCJpYXQiOjE3ODI0Njk5OTEsImp0aSI6IjIyZDU1ZjA0NDQ4YTQ5NmU5MWU3Yjc3Yjk4NjgyMDZkIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.sQG3_BQzpmfn6MYTbhN2ifQ7P-EBc3GzZcKb1MhfRt8 HTTP/1.1" 406 110
+WARNING 2026-06-26 13:33:42,888 log 6039 129868385736384 Forbidden: /api/v1/integration/analytics/
+WARNING 2026-06-26 13:33:42,898 basehttp 6039 129868385736384 "GET /api/v1/integration/analytics/ HTTP/1.1" 403 109
+WARNING 2026-06-26 13:33:53,041 log 6039 129868402521792 Forbidden: /api/v1/integration/analytics/
+WARNING 2026-06-26 13:33:53,047 basehttp 6039 129868402521792 "GET /api/v1/integration/analytics/ HTTP/1.1" 403 109
+WARNING 2026-06-26 13:33:53,057 log 6039 129868402521792 Forbidden: /api/v1/integration/analytics/
+WARNING 2026-06-26 13:33:53,060 basehttp 6039 129868402521792 "GET /api/v1/integration/analytics/ HTTP/1.1" 403 109
+WARNING 2026-06-26 13:33:54,140 log 6039 129868394129088 Forbidden: /api/v1/audit/logs/
+WARNING 2026-06-26 13:33:54,141 basehttp 6039 129868394129088 "GET /api/v1/audit/logs/?page_size=20 HTTP/1.1" 403 109
+WARNING 2026-06-26 13:33:54,186 log 6039 129868394129088 Forbidden: /api/v1/audit/logs/
+WARNING 2026-06-26 13:33:54,186 basehttp 6039 129868394129088 "GET /api/v1/audit/logs/?page_size=20 HTTP/1.1" 403 109
+WARNING 2026-06-26 13:33:58,015 log 6039 129868385736384 Forbidden: /api/v1/integration/analytics/
+WARNING 2026-06-26 13:33:58,019 basehttp 6039 129868385736384 "GET /api/v1/integration/analytics/ HTTP/1.1" 403 109
+WARNING 2026-06-26 13:33:58,033 log 6039 129868385736384 Forbidden: /api/v1/integration/analytics/
+WARNING 2026-06-26 13:33:58,035 basehttp 6039 129868385736384 "GET /api/v1/integration/analytics/ HTTP/1.1" 403 109
+WARNING 2026-06-26 13:34:02,887 log 6039 129868394129088 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 13:34:02,889 basehttp 6039 129868394129088 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDcwODkxLCJpYXQiOjE3ODI0Njk5OTEsImp0aSI6IjIyZDU1ZjA0NDQ4YTQ5NmU5MWU3Yjc3Yjk4NjgyMDZkIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.sQG3_BQzpmfn6MYTbhN2ifQ7P-EBc3GzZcKb1MhfRt8 HTTP/1.1" 406 110
+WARNING 2026-06-26 13:34:27,832 log 6039 129868394129088 Not Found: /api/v1/issuer/notifications/unread-count/
+WARNING 2026-06-26 13:34:27,834 basehttp 6039 129868394129088 "GET /api/v1/issuer/notifications/unread-count/ HTTP/1.1" 404 4856
+WARNING 2026-06-26 13:34:42,914 log 6039 129868394129088 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 13:34:42,918 basehttp 6039 129868394129088 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDcwODkxLCJpYXQiOjE3ODI0Njk5OTEsImp0aSI6IjIyZDU1ZjA0NDQ4YTQ5NmU5MWU3Yjc3Yjk4NjgyMDZkIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.sQG3_BQzpmfn6MYTbhN2ifQ7P-EBc3GzZcKb1MhfRt8 HTTP/1.1" 406 110
+WARNING 2026-06-26 13:35:27,801 log 6039 129868394129088 Not Found: /api/v1/issuer/notifications/unread-count/
+WARNING 2026-06-26 13:35:27,801 basehttp 6039 129868394129088 "GET /api/v1/issuer/notifications/unread-count/ HTTP/1.1" 404 4856
+WARNING 2026-06-26 13:35:42,948 log 6039 129868394129088 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 13:35:42,950 basehttp 6039 129868394129088 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDcwODkxLCJpYXQiOjE3ODI0Njk5OTEsImp0aSI6IjIyZDU1ZjA0NDQ4YTQ5NmU5MWU3Yjc3Yjk4NjgyMDZkIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.sQG3_BQzpmfn6MYTbhN2ifQ7P-EBc3GzZcKb1MhfRt8 HTTP/1.1" 406 110
+WARNING 2026-06-26 13:36:28,543 log 6039 129868394129088 Not Found: /api/v1/issuer/notifications/unread-count/
+WARNING 2026-06-26 13:36:28,544 basehttp 6039 129868394129088 "GET /api/v1/issuer/notifications/unread-count/ HTTP/1.1" 404 4856
+WARNING 2026-06-26 13:36:43,543 log 6039 129868394129088 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 13:36:43,545 basehttp 6039 129868394129088 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDcwODkxLCJpYXQiOjE3ODI0Njk5OTEsImp0aSI6IjIyZDU1ZjA0NDQ4YTQ5NmU5MWU3Yjc3Yjk4NjgyMDZkIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.sQG3_BQzpmfn6MYTbhN2ifQ7P-EBc3GzZcKb1MhfRt8 HTTP/1.1" 406 110
+WARNING 2026-06-26 13:37:28,613 log 6039 129868394129088 Not Found: /api/v1/issuer/notifications/unread-count/
+WARNING 2026-06-26 13:37:28,617 basehttp 6039 129868394129088 "GET /api/v1/issuer/notifications/unread-count/ HTTP/1.1" 404 4856
+WARNING 2026-06-26 13:37:44,537 log 6039 129868394129088 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 13:37:44,539 basehttp 6039 129868394129088 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDcwODkxLCJpYXQiOjE3ODI0Njk5OTEsImp0aSI6IjIyZDU1ZjA0NDQ4YTQ5NmU5MWU3Yjc3Yjk4NjgyMDZkIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.sQG3_BQzpmfn6MYTbhN2ifQ7P-EBc3GzZcKb1MhfRt8 HTTP/1.1" 406 110
+WARNING 2026-06-26 13:38:23,596 log 6039 129868368950976 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 13:38:23,606 basehttp 6039 129868368950976 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDcwODkxLCJpYXQiOjE3ODI0Njk5OTEsImp0aSI6IjIyZDU1ZjA0NDQ4YTQ5NmU5MWU3Yjc3Yjk4NjgyMDZkIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.sQG3_BQzpmfn6MYTbhN2ifQ7P-EBc3GzZcKb1MhfRt8 HTTP/1.1" 406 110
+WARNING 2026-06-26 13:38:23,601 log 6039 129868385736384 Not Found: /api/v1/issuer/notifications/unread-count/
+WARNING 2026-06-26 13:38:23,615 basehttp 6039 129868385736384 "GET /api/v1/issuer/notifications/unread-count/ HTTP/1.1" 404 4856
+WARNING 2026-06-26 13:38:23,672 log 6039 129868402521792 Not Found: /api/v1/issuer/notifications/unread-count/
+WARNING 2026-06-26 13:38:23,680 basehttp 6039 129868402521792 "GET /api/v1/issuer/notifications/unread-count/ HTTP/1.1" 404 4856
+WARNING 2026-06-26 13:38:26,876 log 6039 129868385736384 Bad Request: /api/v1/auth/logout/
+WARNING 2026-06-26 13:38:26,878 basehttp 6039 129868385736384 "POST /api/v1/auth/logout/ HTTP/1.1" 400 66
+WARNING 2026-06-26 13:39:02,461 log 6039 129868377343680 Not Found: /api/v1/notifications/unread-count/
+WARNING 2026-06-26 13:39:02,488 basehttp 6039 129868377343680 "GET /api/v1/notifications/unread-count/ HTTP/1.1" 404 6265
+WARNING 2026-06-26 13:39:02,539 log 6039 129868368950976 Not Found: /api/v1/holder/notifications/unread-count/
+WARNING 2026-06-26 13:39:02,542 basehttp 6039 129868368950976 "GET /api/v1/holder/notifications/unread-count/ HTTP/1.1" 404 4856
+WARNING 2026-06-26 13:39:02,567 log 6039 129868394129088 Not Found: /api/v1/notifications/unread-count/
+WARNING 2026-06-26 13:39:02,578 basehttp 6039 129868394129088 "GET /api/v1/notifications/unread-count/ HTTP/1.1" 404 6265
+WARNING 2026-06-26 13:39:02,604 log 6039 129868402521792 Not Found: /api/v1/holder/notifications/unread-count/
+WARNING 2026-06-26 13:39:02,604 basehttp 6039 129868402521792 "GET /api/v1/holder/notifications/unread-count/ HTTP/1.1" 404 4856
+WARNING 2026-06-26 13:39:06,137 log 6039 129868484310720 Not Found: /api/v1/holder/notifications/unread-count/
+WARNING 2026-06-26 13:39:06,161 basehttp 6039 129868484310720 "GET /api/v1/holder/notifications/unread-count/ HTTP/1.1" 404 4856
+WARNING 2026-06-26 13:39:06,170 log 6039 129868368950976 Not Found: /api/v1/notifications/unread-count/
+WARNING 2026-06-26 13:39:06,180 basehttp 6039 129868368950976 "GET /api/v1/notifications/unread-count/ HTTP/1.1" 404 6265
+WARNING 2026-06-26 13:39:06,193 log 6039 129868402521792 Not Found: /api/v1/holder/notifications/unread-count/
+WARNING 2026-06-26 13:39:06,202 basehttp 6039 129868402521792 "GET /api/v1/holder/notifications/unread-count/ HTTP/1.1" 404 4856
+WARNING 2026-06-26 13:39:06,228 log 6039 129868368950976 Not Found: /api/v1/notifications/unread-count/
+WARNING 2026-06-26 13:39:06,229 basehttp 6039 129868368950976 "GET /api/v1/notifications/unread-count/ HTTP/1.1" 404 6265
+WARNING 2026-06-26 13:40:00,206 log 6039 129868368950976 Not Found: /api/v1/holder/notifications/unread-count/
+WARNING 2026-06-26 13:40:00,252 basehttp 6039 129868368950976 "GET /api/v1/holder/notifications/unread-count/ HTTP/1.1" 404 4856
+WARNING 2026-06-26 13:40:00,284 log 6039 129868377343680 Not Found: /api/v1/notifications/unread-count/
+WARNING 2026-06-26 13:40:00,299 basehttp 6039 129868377343680 "GET /api/v1/notifications/unread-count/ HTTP/1.1" 404 6265
+WARNING 2026-06-26 13:40:00,370 log 6039 129868394129088 Not Found: /api/v1/holder/notifications/unread-count/
+WARNING 2026-06-26 13:40:00,377 log 6039 129868402521792 Not Found: /api/v1/notifications/unread-count/
+WARNING 2026-06-26 13:40:00,381 basehttp 6039 129868402521792 "GET /api/v1/notifications/unread-count/ HTTP/1.1" 404 6265
+WARNING 2026-06-26 13:40:00,377 basehttp 6039 129868394129088 "GET /api/v1/holder/notifications/unread-count/ HTTP/1.1" 404 4856
+WARNING 2026-06-26 13:51:40,883 log 21264 138464142026432 Not Found: /api/v1/holder/notifications/unread-count/
+WARNING 2026-06-26 13:51:40,885 basehttp 21264 138464142026432 "GET /api/v1/holder/notifications/unread-count/ HTTP/1.1" 404 4856
+WARNING 2026-06-26 13:51:40,905 log 21264 138464142026432 Not Found: /api/v1/holder/notifications/unread-count/
+WARNING 2026-06-26 13:51:40,906 basehttp 21264 138464142026432 "GET /api/v1/holder/notifications/unread-count/ HTTP/1.1" 404 4856
+WARNING 2026-06-26 13:51:55,510 log 22038 139876741670592 Bad Request: /api/v1/wallet/shares/
+WARNING 2026-06-26 13:51:55,511 basehttp 22038 139876741670592 "POST /api/v1/wallet/shares/ HTTP/1.1" 400 101
+WARNING 2026-06-26 13:52:39,796 log 22038 139876963968704 Bad Request: /api/v1/wallet/shares/
+WARNING 2026-06-26 13:52:39,797 basehttp 22038 139876963968704 "POST /api/v1/wallet/shares/ HTTP/1.1" 400 101
+WARNING 2026-06-26 13:52:48,792 log 22038 139876963968704 Bad Request: /api/v1/wallet/shares/disable/
+WARNING 2026-06-26 13:52:48,794 basehttp 22038 139876963968704 "POST /api/v1/wallet/shares/disable/ HTTP/1.1" 400 72
+WARNING 2026-06-26 13:54:06,009 log 22038 139876963968704 Unauthorized: /api/v1/verification/history/
+WARNING 2026-06-26 13:54:06,010 basehttp 22038 139876963968704 "GET /api/v1/verification/history/ HTTP/1.1" 401 478
+WARNING 2026-06-26 13:54:06,020 log 22038 139876750063296 Unauthorized: /api/v1/verification/history/
+WARNING 2026-06-26 13:54:06,026 basehttp 22038 139876750063296 "GET /api/v1/verification/history/ HTTP/1.1" 401 478
+WARNING 2026-06-26 13:55:51,786 log 22038 139876741670592 Bad Request: /api/v1/auth/logout/
+WARNING 2026-06-26 13:55:51,787 basehttp 22038 139876741670592 "POST /api/v1/auth/logout/ HTTP/1.1" 400 66
+ERROR 2026-06-26 13:56:51,083 log 22038 139876750063296 Internal Server Error: /api/v1/admin-portal/dashboard/
+Traceback (most recent call last):
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/apps/admin_portal/views/dashboard.py", line 11, in get
+    stats = StatsService.get_dashboard_stats()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/apps/admin_portal/services/stats_service.py", line 16, in get_dashboard_stats
+    "connected_organizations": Organization.objects.filter(integration_enabled=True).count(),
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1609, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1641, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1491, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1303, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1768, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'integration_enabled' into field. Choices are: accreditation, address, api_token, api_token_encrypted, approved_at, approved_by, approved_by_id, base_api_url, brand_color, contact_person, created_at, credential_org, credentials, did, did_id, email, holder_mappings, id, integration_config, logo, members, name, org_type, org_type_id, phone, platform_webhook_secret, platform_webhook_secret_encrypted, platform_webhook_url, public_key, public_key_verified_at, seal, status, sync_logs, updated_at, website
+ERROR 2026-06-26 13:56:51,089 basehttp 22038 139876750063296 "GET /api/v1/admin-portal/dashboard/ HTTP/1.1" 500 159512
+ERROR 2026-06-26 13:56:51,227 log 22038 139876963968704 Internal Server Error: /api/v1/admin-portal/dashboard/
+Traceback (most recent call last):
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/apps/admin_portal/views/dashboard.py", line 11, in get
+    stats = StatsService.get_dashboard_stats()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/apps/admin_portal/services/stats_service.py", line 16, in get_dashboard_stats
+    "connected_organizations": Organization.objects.filter(integration_enabled=True).count(),
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1609, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1641, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1491, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1303, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1768, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'integration_enabled' into field. Choices are: accreditation, address, api_token, api_token_encrypted, approved_at, approved_by, approved_by_id, base_api_url, brand_color, contact_person, created_at, credential_org, credentials, did, did_id, email, holder_mappings, id, integration_config, logo, members, name, org_type, org_type_id, phone, platform_webhook_secret, platform_webhook_secret_encrypted, platform_webhook_url, public_key, public_key_verified_at, seal, status, sync_logs, updated_at, website
+ERROR 2026-06-26 13:56:51,237 basehttp 22038 139876963968704 "GET /api/v1/admin-portal/dashboard/ HTTP/1.1" 500 159512
+ERROR 2026-06-26 13:56:51,398 log 22038 139876750063296 Internal Server Error: /api/v1/admin-portal/dashboard/
+Traceback (most recent call last):
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/apps/admin_portal/views/dashboard.py", line 11, in get
+    stats = StatsService.get_dashboard_stats()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/apps/admin_portal/services/stats_service.py", line 16, in get_dashboard_stats
+    "connected_organizations": Organization.objects.filter(integration_enabled=True).count(),
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1609, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1641, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1491, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1303, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1768, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'integration_enabled' into field. Choices are: accreditation, address, api_token, api_token_encrypted, approved_at, approved_by, approved_by_id, base_api_url, brand_color, contact_person, created_at, credential_org, credentials, did, did_id, email, holder_mappings, id, integration_config, logo, members, name, org_type, org_type_id, phone, platform_webhook_secret, platform_webhook_secret_encrypted, platform_webhook_url, public_key, public_key_verified_at, seal, status, sync_logs, updated_at, website
+ERROR 2026-06-26 13:56:51,416 basehttp 22038 139876750063296 "GET /api/v1/admin-portal/dashboard/ HTTP/1.1" 500 159512
+ERROR 2026-06-26 13:56:51,577 log 22038 139876963968704 Internal Server Error: /api/v1/admin-portal/dashboard/
+Traceback (most recent call last):
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/apps/admin_portal/views/dashboard.py", line 11, in get
+    stats = StatsService.get_dashboard_stats()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/apps/admin_portal/services/stats_service.py", line 16, in get_dashboard_stats
+    "connected_organizations": Organization.objects.filter(integration_enabled=True).count(),
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1609, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1641, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1491, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1303, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1768, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'integration_enabled' into field. Choices are: accreditation, address, api_token, api_token_encrypted, approved_at, approved_by, approved_by_id, base_api_url, brand_color, contact_person, created_at, credential_org, credentials, did, did_id, email, holder_mappings, id, integration_config, logo, members, name, org_type, org_type_id, phone, platform_webhook_secret, platform_webhook_secret_encrypted, platform_webhook_url, public_key, public_key_verified_at, seal, status, sync_logs, updated_at, website
+ERROR 2026-06-26 13:56:51,587 basehttp 22038 139876963968704 "GET /api/v1/admin-portal/dashboard/ HTTP/1.1" 500 159512
+WARNING 2026-06-26 14:10:55,422 log 31690 135831364210816 Not Found: /auth/register/
+WARNING 2026-06-26 14:10:56,154 log 31690 135831364210816 Not Found: /auth/register/
+WARNING 2026-06-26 14:10:56,162 log 31690 135831364210816 Not Found: /auth/register/
+WARNING 2026-06-26 14:10:56,318 log 31690 135831364210816 Not Found: /auth/register/
+WARNING 2026-06-26 14:10:56,454 log 31690 135831364210816 Not Found: /auth/register/
+WARNING 2026-06-26 14:10:56,515 log 31690 135831364210816 Not Found: /auth/register/
+WARNING 2026-06-26 14:10:56,586 log 31690 135831364210816 Not Found: /auth/register/
+WARNING 2026-06-26 14:10:56,811 log 31690 135831364210816 Not Found: /auth/register/
+WARNING 2026-06-26 14:10:56,989 log 31690 135831364210816 Not Found: /auth/register/
+WARNING 2026-06-26 14:10:59,975 log 31690 135831364210816 Not Found: /auth/login/
+WARNING 2026-06-26 14:11:01,550 log 31690 135831364210816 Not Found: /auth/login/
+WARNING 2026-06-26 14:11:04,811 log 31690 135831364210816 Not Found: /auth/login/
+WARNING 2026-06-26 14:11:06,306 log 31690 135831364210816 Not Found: /auth/login/
+WARNING 2026-06-26 14:11:07,566 log 31690 135831364210816 Not Found: /auth/login/
+WARNING 2026-06-26 14:11:08,661 log 31690 135831364210816 Not Found: /profile
+WARNING 2026-06-26 14:11:10,199 log 31690 135831364210816 Not Found: /profile
+WARNING 2026-06-26 14:11:13,779 log 31690 135831364210816 Not Found: /national-id/initiate/
+WARNING 2026-06-26 14:11:16,408 log 31690 135831364210816 Not Found: /national-id/initiate/
+WARNING 2026-06-26 14:11:18,601 log 31690 135831364210816 Not Found: /national-id/initiate/
+WARNING 2026-06-26 14:11:21,706 log 31690 135831364210816 Not Found: /national-id/initiate/
+WARNING 2026-06-26 14:12:49,647 log 31690 135831364210816 Not Found: /national-id/initiate/
+WARNING 2026-06-26 14:12:50,891 log 31690 135831364210816 Not Found: /national-id/initiate/
+WARNING 2026-06-26 14:12:51,878 log 31690 135831364210816 Not Found: /national-id/initiate/
+WARNING 2026-06-26 14:12:52,850 log 31690 135831364210816 Not Found: /national-id/initiate/
+WARNING 2026-06-26 14:12:52,869 log 31690 135831364210816 Not Found: /national-id/initiate/
+WARNING 2026-06-26 14:12:54,065 log 31690 135831364210816 Not Found: /national-id/initiate/
+WARNING 2026-06-26 14:12:55,576 log 31690 135831364210816 Not Found: /national-id/confirm/
+WARNING 2026-06-26 14:12:56,767 log 31690 135831364210816 Not Found: /national-id/confirm/
+WARNING 2026-06-26 14:12:57,780 log 31690 135831364210816 Not Found: /national-id/confirm/
+WARNING 2026-06-26 14:12:58,884 log 31690 135831364210816 Not Found: /national-id/confirm/
+WARNING 2026-06-26 14:13:00,021 log 31690 135831364210816 Not Found: /national-id/confirm/
+WARNING 2026-06-26 14:13:02,811 log 31690 135831364210816 Not Found: /national-id/confirm/
+WARNING 2026-06-26 14:13:03,858 log 31690 135831364210816 Not Found: /national-id/initiate/
+WARNING 2026-06-26 14:13:04,801 log 31690 135831364210816 Not Found: /national-id/initiate/
+WARNING 2026-06-26 14:13:05,764 log 31690 135831364210816 Not Found: /national-id/confirm/
+WARNING 2026-06-26 14:13:06,691 log 31690 135831364210816 Not Found: /national-id/status/
+WARNING 2026-06-26 14:13:08,890 log 31690 135831364210816 Not Found: /national-id/status/
+WARNING 2026-06-26 14:13:10,013 log 31690 135831364210816 Not Found: /national-id/status/
+WARNING 2026-06-26 14:17:35,969 log 33211 123763991508672 Unauthorized: /api/v1/auth/me/
+WARNING 2026-06-26 14:17:35,971 basehttp 33211 123763991508672 "GET /api/v1/auth/me/ HTTP/1.1" 401 478
+WARNING 2026-06-26 14:17:35,971 log 33211 123763911816896 Unauthorized: /api/v1/admin-portal/organizations/
+WARNING 2026-06-26 14:17:35,976 basehttp 33211 123763911816896 "GET /api/v1/admin-portal/organizations/ HTTP/1.1" 401 478
+WARNING 2026-06-26 14:17:35,992 log 33211 123763903424192 Unauthorized: /api/v1/auth/me/
+WARNING 2026-06-26 14:17:36,002 basehttp 33211 123763903424192 "GET /api/v1/auth/me/ HTTP/1.1" 401 478
+WARNING 2026-06-26 14:17:36,012 log 33211 123763895031488 Unauthorized: /api/v1/admin-portal/organizations/
+WARNING 2026-06-26 14:17:36,018 basehttp 33211 123763895031488 "GET /api/v1/admin-portal/organizations/ HTTP/1.1" 401 478
+WARNING 2026-06-26 14:33:33,277 log 34509 132579801953984 Unauthorized: /api/v1/auth/me/
+WARNING 2026-06-26 14:33:33,274 log 34509 132579793561280 Unauthorized: /api/v1/admin-portal/organizations/
+WARNING 2026-06-26 14:33:33,284 basehttp 34509 132579793561280 "GET /api/v1/admin-portal/organizations/ HTTP/1.1" 401 478
+WARNING 2026-06-26 14:33:33,284 basehttp 34509 132579801953984 "GET /api/v1/auth/me/ HTTP/1.1" 401 478
+WARNING 2026-06-26 14:33:33,301 log 34509 132579785168576 Unauthorized: /api/v1/admin-portal/organizations/
+WARNING 2026-06-26 14:33:33,310 basehttp 34509 132579785168576 "GET /api/v1/admin-portal/organizations/ HTTP/1.1" 401 478
+WARNING 2026-06-26 14:33:33,314 log 34509 132579776775872 Unauthorized: /api/v1/auth/me/
+WARNING 2026-06-26 14:33:33,316 basehttp 34509 132579776775872 "GET /api/v1/auth/me/ HTTP/1.1" 401 478
+WARNING 2026-06-26 14:33:33,384 log 34509 132579776775872 Unauthorized: /api/v1/auth/token/refresh/
+WARNING 2026-06-26 14:33:33,385 basehttp 34509 132579776775872 "POST /api/v1/auth/token/refresh/ HTTP/1.1" 401 214
+WARNING 2026-06-26 14:49:26,496 log 39437 137500467119808 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 14:49:26,529 basehttp 39437 137500467119808 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc1NDY2LCJpYXQiOjE3ODI0NzQ1NjYsImp0aSI6IjY4OGRlZGJiYzdhMzQ4ZTY5Y2QzMGNlZjVjNDYwYjNmIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.ivwuygCGlhx8vhMJl2fyYYZFzIVsR1ee4-EPU9U2ouE HTTP/1.1" 406 110
+WARNING 2026-06-26 14:49:31,651 log 39437 137500458727104 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 14:49:31,652 basehttp 39437 137500458727104 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc1NDY2LCJpYXQiOjE3ODI0NzQ1NjYsImp0aSI6IjY4OGRlZGJiYzdhMzQ4ZTY5Y2QzMGNlZjVjNDYwYjNmIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.ivwuygCGlhx8vhMJl2fyYYZFzIVsR1ee4-EPU9U2ouE HTTP/1.1" 406 110
+WARNING 2026-06-26 14:49:41,666 log 39437 137500458727104 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 14:49:41,670 basehttp 39437 137500458727104 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc1NDY2LCJpYXQiOjE3ODI0NzQ1NjYsImp0aSI6IjY4OGRlZGJiYzdhMzQ4ZTY5Y2QzMGNlZjVjNDYwYjNmIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.ivwuygCGlhx8vhMJl2fyYYZFzIVsR1ee4-EPU9U2ouE HTTP/1.1" 406 110
+WARNING 2026-06-26 14:50:01,681 log 39437 137500458727104 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 14:50:01,682 basehttp 39437 137500458727104 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc1NDY2LCJpYXQiOjE3ODI0NzQ1NjYsImp0aSI6IjY4OGRlZGJiYzdhMzQ4ZTY5Y2QzMGNlZjVjNDYwYjNmIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.ivwuygCGlhx8vhMJl2fyYYZFzIVsR1ee4-EPU9U2ouE HTTP/1.1" 406 110
+WARNING 2026-06-26 14:50:35,287 log 39437 137500475512512 Forbidden: /api/v1/audit/logs/
+WARNING 2026-06-26 14:50:35,295 basehttp 39437 137500475512512 "GET /api/v1/audit/logs/?page_size=20 HTTP/1.1" 403 109
+WARNING 2026-06-26 14:50:35,358 log 39437 137500475512512 Forbidden: /api/v1/audit/logs/
+WARNING 2026-06-26 14:50:35,367 basehttp 39437 137500475512512 "GET /api/v1/audit/logs/?page_size=20 HTTP/1.1" 403 109
+WARNING 2026-06-26 14:50:41,704 log 39437 137500483905216 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 14:50:41,706 basehttp 39437 137500483905216 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc1NDY2LCJpYXQiOjE3ODI0NzQ1NjYsImp0aSI6IjY4OGRlZGJiYzdhMzQ4ZTY5Y2QzMGNlZjVjNDYwYjNmIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.ivwuygCGlhx8vhMJl2fyYYZFzIVsR1ee4-EPU9U2ouE HTTP/1.1" 406 110
+WARNING 2026-06-26 14:51:15,991 log 39437 137500569892544 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 14:51:16,001 basehttp 39437 137500569892544 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc1NDY2LCJpYXQiOjE3ODI0NzQ1NjYsImp0aSI6IjY4OGRlZGJiYzdhMzQ4ZTY5Y2QzMGNlZjVjNDYwYjNmIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.ivwuygCGlhx8vhMJl2fyYYZFzIVsR1ee4-EPU9U2ouE HTTP/1.1" 406 110
+WARNING 2026-06-26 14:51:21,022 log 39437 137500475512512 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 14:51:21,025 basehttp 39437 137500475512512 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc1NDY2LCJpYXQiOjE3ODI0NzQ1NjYsImp0aSI6IjY4OGRlZGJiYzdhMzQ4ZTY5Y2QzMGNlZjVjNDYwYjNmIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.ivwuygCGlhx8vhMJl2fyYYZFzIVsR1ee4-EPU9U2ouE HTTP/1.1" 406 110
+WARNING 2026-06-26 14:51:29,509 log 39437 137500458727104 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 14:51:29,539 basehttp 39437 137500458727104 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc1NDY2LCJpYXQiOjE3ODI0NzQ1NjYsImp0aSI6IjY4OGRlZGJiYzdhMzQ4ZTY5Y2QzMGNlZjVjNDYwYjNmIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.ivwuygCGlhx8vhMJl2fyYYZFzIVsR1ee4-EPU9U2ouE HTTP/1.1" 406 110
+WARNING 2026-06-26 14:51:34,560 log 39437 137500467119808 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 14:51:34,566 basehttp 39437 137500467119808 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc1NDY2LCJpYXQiOjE3ODI0NzQ1NjYsImp0aSI6IjY4OGRlZGJiYzdhMzQ4ZTY5Y2QzMGNlZjVjNDYwYjNmIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.ivwuygCGlhx8vhMJl2fyYYZFzIVsR1ee4-EPU9U2ouE HTTP/1.1" 406 110
+WARNING 2026-06-26 14:51:44,589 log 39437 137500467119808 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 14:51:44,590 basehttp 39437 137500467119808 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc1NDY2LCJpYXQiOjE3ODI0NzQ1NjYsImp0aSI6IjY4OGRlZGJiYzdhMzQ4ZTY5Y2QzMGNlZjVjNDYwYjNmIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.ivwuygCGlhx8vhMJl2fyYYZFzIVsR1ee4-EPU9U2ouE HTTP/1.1" 406 110
+WARNING 2026-06-26 14:55:55,522 log 39437 137500458727104 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 14:55:55,560 basehttp 39437 137500458727104 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc1NDY2LCJpYXQiOjE3ODI0NzQ1NjYsImp0aSI6IjY4OGRlZGJiYzdhMzQ4ZTY5Y2QzMGNlZjVjNDYwYjNmIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.ivwuygCGlhx8vhMJl2fyYYZFzIVsR1ee4-EPU9U2ouE HTTP/1.1" 406 110
+WARNING 2026-06-26 14:56:00,556 log 39437 137500492297920 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 14:56:00,560 basehttp 39437 137500492297920 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc1NDY2LCJpYXQiOjE3ODI0NzQ1NjYsImp0aSI6IjY4OGRlZGJiYzdhMzQ4ZTY5Y2QzMGNlZjVjNDYwYjNmIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.ivwuygCGlhx8vhMJl2fyYYZFzIVsR1ee4-EPU9U2ouE HTTP/1.1" 406 110
+WARNING 2026-06-26 14:56:09,638 log 39437 137500569892544 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 14:56:09,671 basehttp 39437 137500569892544 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc1NDY2LCJpYXQiOjE3ODI0NzQ1NjYsImp0aSI6IjY4OGRlZGJiYzdhMzQ4ZTY5Y2QzMGNlZjVjNDYwYjNmIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.ivwuygCGlhx8vhMJl2fyYYZFzIVsR1ee4-EPU9U2ouE HTTP/1.1" 406 110
+WARNING 2026-06-26 14:56:14,684 log 39437 137500483905216 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 14:56:14,684 basehttp 39437 137500483905216 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc1NDY2LCJpYXQiOjE3ODI0NzQ1NjYsImp0aSI6IjY4OGRlZGJiYzdhMzQ4ZTY5Y2QzMGNlZjVjNDYwYjNmIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.ivwuygCGlhx8vhMJl2fyYYZFzIVsR1ee4-EPU9U2ouE HTTP/1.1" 406 110
+WARNING 2026-06-26 14:56:24,692 log 39437 137500450334400 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 14:56:24,694 basehttp 39437 137500450334400 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc1NDY2LCJpYXQiOjE3ODI0NzQ1NjYsImp0aSI6IjY4OGRlZGJiYzdhMzQ4ZTY5Y2QzMGNlZjVjNDYwYjNmIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.ivwuygCGlhx8vhMJl2fyYYZFzIVsR1ee4-EPU9U2ouE HTTP/1.1" 406 110
+WARNING 2026-06-26 14:56:27,282 log 39437 137500483905216 Forbidden: /api/v1/audit/logs/
+WARNING 2026-06-26 14:56:27,288 basehttp 39437 137500483905216 "GET /api/v1/audit/logs/?page_size=20 HTTP/1.1" 403 109
+WARNING 2026-06-26 14:56:27,303 log 39437 137500450334400 Forbidden: /api/v1/audit/logs/
+WARNING 2026-06-26 14:56:27,306 basehttp 39437 137500450334400 "GET /api/v1/audit/logs/?page_size=20 HTTP/1.1" 403 109
+WARNING 2026-06-26 14:56:44,709 log 39437 137500483905216 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 14:56:44,712 basehttp 39437 137500483905216 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc1NDY2LCJpYXQiOjE3ODI0NzQ1NjYsImp0aSI6IjY4OGRlZGJiYzdhMzQ4ZTY5Y2QzMGNlZjVjNDYwYjNmIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.ivwuygCGlhx8vhMJl2fyYYZFzIVsR1ee4-EPU9U2ouE HTTP/1.1" 406 110
+WARNING 2026-06-26 14:57:24,752 log 42383 134541020755648 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 14:57:24,754 basehttp 42383 134541020755648 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc1NDY2LCJpYXQiOjE3ODI0NzQ1NjYsImp0aSI6IjY4OGRlZGJiYzdhMzQ4ZTY5Y2QzMGNlZjVjNDYwYjNmIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.ivwuygCGlhx8vhMJl2fyYYZFzIVsR1ee4-EPU9U2ouE HTTP/1.1" 406 110
+WARNING 2026-06-26 14:58:24,769 log 42383 134541020755648 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 14:58:24,773 basehttp 42383 134541020755648 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc1NDY2LCJpYXQiOjE3ODI0NzQ1NjYsImp0aSI6IjY4OGRlZGJiYzdhMzQ4ZTY5Y2QzMGNlZjVjNDYwYjNmIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.ivwuygCGlhx8vhMJl2fyYYZFzIVsR1ee4-EPU9U2ouE HTTP/1.1" 406 110
+WARNING 2026-06-26 14:59:24,802 log 42383 134541020755648 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 14:59:24,807 basehttp 42383 134541020755648 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc1NDY2LCJpYXQiOjE3ODI0NzQ1NjYsImp0aSI6IjY4OGRlZGJiYzdhMzQ4ZTY5Y2QzMGNlZjVjNDYwYjNmIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.ivwuygCGlhx8vhMJl2fyYYZFzIVsR1ee4-EPU9U2ouE HTTP/1.1" 406 110
+WARNING 2026-06-26 15:00:24,837 log 42863 130280402712256 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 15:00:24,837 basehttp 42863 130280402712256 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc1NDY2LCJpYXQiOjE3ODI0NzQ1NjYsImp0aSI6IjY4OGRlZGJiYzdhMzQ4ZTY5Y2QzMGNlZjVjNDYwYjNmIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.ivwuygCGlhx8vhMJl2fyYYZFzIVsR1ee4-EPU9U2ouE HTTP/1.1" 406 110
+WARNING 2026-06-26 15:01:24,848 log 42863 130280402712256 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 15:01:24,849 basehttp 42863 130280402712256 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc1NDY2LCJpYXQiOjE3ODI0NzQ1NjYsImp0aSI6IjY4OGRlZGJiYzdhMzQ4ZTY5Y2QzMGNlZjVjNDYwYjNmIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.ivwuygCGlhx8vhMJl2fyYYZFzIVsR1ee4-EPU9U2ouE HTTP/1.1" 406 110
+WARNING 2026-06-26 15:01:40,893 log 42863 130280394319552 Forbidden: /api/v1/audit/logs/
+WARNING 2026-06-26 15:01:40,894 basehttp 42863 130280394319552 "GET /api/v1/audit/logs/?page_size=20 HTTP/1.1" 403 109
+WARNING 2026-06-26 15:01:40,914 log 42863 130280394319552 Forbidden: /api/v1/audit/logs/
+WARNING 2026-06-26 15:01:40,921 basehttp 42863 130280394319552 "GET /api/v1/audit/logs/?page_size=20 HTTP/1.1" 403 109
+WARNING 2026-06-26 15:02:24,855 log 42863 130280182511296 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 15:02:24,856 basehttp 42863 130280182511296 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc1NDY2LCJpYXQiOjE3ODI0NzQ1NjYsImp0aSI6IjY4OGRlZGJiYzdhMzQ4ZTY5Y2QzMGNlZjVjNDYwYjNmIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.ivwuygCGlhx8vhMJl2fyYYZFzIVsR1ee4-EPU9U2ouE HTTP/1.1" 406 110
+WARNING 2026-06-26 15:03:24,868 log 42863 130280182511296 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 15:03:24,869 basehttp 42863 130280182511296 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc1NDY2LCJpYXQiOjE3ODI0NzQ1NjYsImp0aSI6IjY4OGRlZGJiYzdhMzQ4ZTY5Y2QzMGNlZjVjNDYwYjNmIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.ivwuygCGlhx8vhMJl2fyYYZFzIVsR1ee4-EPU9U2ouE HTTP/1.1" 406 110
+WARNING 2026-06-26 15:04:12,871 log 42863 130280182511296 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 15:04:12,872 basehttp 42863 130280182511296 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc1NDY2LCJpYXQiOjE3ODI0NzQ1NjYsImp0aSI6IjY4OGRlZGJiYzdhMzQ4ZTY5Y2QzMGNlZjVjNDYwYjNmIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.ivwuygCGlhx8vhMJl2fyYYZFzIVsR1ee4-EPU9U2ouE HTTP/1.1" 406 110
+WARNING 2026-06-26 15:05:09,634 log 42863 130280182511296 Unauthorized: /api/v1/notifications/unread-count/
+WARNING 2026-06-26 15:05:09,635 basehttp 42863 130280182511296 "GET /api/v1/notifications/unread-count/ HTTP/1.1" 401 478
+WARNING 2026-06-26 15:05:12,899 log 42863 130280182511296 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 15:05:12,900 basehttp 42863 130280182511296 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc2NDA5LCJpYXQiOjE3ODI0NzQ1NjYsImp0aSI6IjBjM2NhYThmZDA3NTRkNDZhNWZiNmEzMzI4NzEyOTA2IiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.FXF4UjksY0NDgujiWLPLcXqcHdDj6AW3i-W3L5jXxc8 HTTP/1.1" 406 110
+WARNING 2026-06-26 15:05:42,886 log 42863 130280182511296 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 15:05:42,889 basehttp 42863 130280182511296 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc2NDA5LCJpYXQiOjE3ODI0NzQ1NjYsImp0aSI6IjBjM2NhYThmZDA3NTRkNDZhNWZiNmEzMzI4NzEyOTA2IiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.FXF4UjksY0NDgujiWLPLcXqcHdDj6AW3i-W3L5jXxc8 HTTP/1.1" 406 110
+WARNING 2026-06-26 15:06:42,916 log 42863 130280182511296 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 15:06:42,923 basehttp 42863 130280182511296 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc2NDA5LCJpYXQiOjE3ODI0NzQ1NjYsImp0aSI6IjBjM2NhYThmZDA3NTRkNDZhNWZiNmEzMzI4NzEyOTA2IiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.FXF4UjksY0NDgujiWLPLcXqcHdDj6AW3i-W3L5jXxc8 HTTP/1.1" 406 110
+WARNING 2026-06-26 15:07:42,943 log 42863 130280182511296 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 15:07:42,945 basehttp 42863 130280182511296 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc2NDA5LCJpYXQiOjE3ODI0NzQ1NjYsImp0aSI6IjBjM2NhYThmZDA3NTRkNDZhNWZiNmEzMzI4NzEyOTA2IiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.FXF4UjksY0NDgujiWLPLcXqcHdDj6AW3i-W3L5jXxc8 HTTP/1.1" 406 110
+WARNING 2026-06-26 15:08:42,967 log 42863 130280182511296 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 15:08:42,976 basehttp 42863 130280182511296 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc2NDA5LCJpYXQiOjE3ODI0NzQ1NjYsImp0aSI6IjBjM2NhYThmZDA3NTRkNDZhNWZiNmEzMzI4NzEyOTA2IiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.FXF4UjksY0NDgujiWLPLcXqcHdDj6AW3i-W3L5jXxc8 HTTP/1.1" 406 110
+WARNING 2026-06-26 15:09:42,983 log 42863 130280182511296 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 15:09:42,984 basehttp 42863 130280182511296 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc2NDA5LCJpYXQiOjE3ODI0NzQ1NjYsImp0aSI6IjBjM2NhYThmZDA3NTRkNDZhNWZiNmEzMzI4NzEyOTA2IiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.FXF4UjksY0NDgujiWLPLcXqcHdDj6AW3i-W3L5jXxc8 HTTP/1.1" 406 110
+WARNING 2026-06-26 15:10:42,991 log 42863 130280182511296 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 15:10:42,992 basehttp 42863 130280182511296 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc2NDA5LCJpYXQiOjE3ODI0NzQ1NjYsImp0aSI6IjBjM2NhYThmZDA3NTRkNDZhNWZiNmEzMzI4NzEyOTA2IiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.FXF4UjksY0NDgujiWLPLcXqcHdDj6AW3i-W3L5jXxc8 HTTP/1.1" 406 110
+WARNING 2026-06-26 15:10:53,546 log 42863 130280157333184 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 15:10:53,562 basehttp 42863 130280157333184 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc2NDA5LCJpYXQiOjE3ODI0NzQ1NjYsImp0aSI6IjBjM2NhYThmZDA3NTRkNDZhNWZiNmEzMzI4NzEyOTA2IiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.FXF4UjksY0NDgujiWLPLcXqcHdDj6AW3i-W3L5jXxc8 HTTP/1.1" 406 110
+WARNING 2026-06-26 15:10:57,539 log 42863 130280182511296 Bad Request: /api/v1/auth/logout/
+WARNING 2026-06-26 15:10:57,541 basehttp 42863 130280182511296 "POST /api/v1/auth/logout/ HTTP/1.1" 400 66
+WARNING 2026-06-26 15:11:27,893 log 42863 130280157333184 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 15:11:27,951 basehttp 42863 130280157333184 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc2Nzg3LCJpYXQiOjE3ODI0NzU4ODcsImp0aSI6ImQ2ZThjZTk2MThlZDRiMTJiZGJiNDM5M2RlNDI2ZjJmIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.neJpYBMPWlvYtsCwtHvlkUFCDUUkX719emMuybhmyaU HTTP/1.1" 406 110
+WARNING 2026-06-26 15:11:33,073 log 42863 130280165725888 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 15:11:33,074 basehttp 42863 130280165725888 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc2Nzg3LCJpYXQiOjE3ODI0NzU4ODcsImp0aSI6ImQ2ZThjZTk2MThlZDRiMTJiZGJiNDM5M2RlNDI2ZjJmIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.neJpYBMPWlvYtsCwtHvlkUFCDUUkX719emMuybhmyaU HTTP/1.1" 406 110
+WARNING 2026-06-26 15:11:43,084 log 42863 130280402712256 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 15:11:43,086 basehttp 42863 130280402712256 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc2Nzg3LCJpYXQiOjE3ODI0NzU4ODcsImp0aSI6ImQ2ZThjZTk2MThlZDRiMTJiZGJiNDM5M2RlNDI2ZjJmIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.neJpYBMPWlvYtsCwtHvlkUFCDUUkX719emMuybhmyaU HTTP/1.1" 406 110
+WARNING 2026-06-26 15:12:03,103 log 42863 130280402712256 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 15:12:03,109 basehttp 42863 130280402712256 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc2Nzg3LCJpYXQiOjE3ODI0NzU4ODcsImp0aSI6ImQ2ZThjZTk2MThlZDRiMTJiZGJiNDM5M2RlNDI2ZjJmIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.neJpYBMPWlvYtsCwtHvlkUFCDUUkX719emMuybhmyaU HTTP/1.1" 406 110
+WARNING 2026-06-26 15:12:43,119 log 42863 130280402712256 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 15:12:43,120 basehttp 42863 130280402712256 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc2Nzg3LCJpYXQiOjE3ODI0NzU4ODcsImp0aSI6ImQ2ZThjZTk2MThlZDRiMTJiZGJiNDM5M2RlNDI2ZjJmIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.neJpYBMPWlvYtsCwtHvlkUFCDUUkX719emMuybhmyaU HTTP/1.1" 406 110
+WARNING 2026-06-26 15:13:43,127 log 42863 130280402712256 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 15:13:43,127 basehttp 42863 130280402712256 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc2Nzg3LCJpYXQiOjE3ODI0NzU4ODcsImp0aSI6ImQ2ZThjZTk2MThlZDRiMTJiZGJiNDM5M2RlNDI2ZjJmIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.neJpYBMPWlvYtsCwtHvlkUFCDUUkX719emMuybhmyaU HTTP/1.1" 406 110
+WARNING 2026-06-26 15:14:43,142 log 42863 130280402712256 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 15:14:43,144 basehttp 42863 130280402712256 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc2Nzg3LCJpYXQiOjE3ODI0NzU4ODcsImp0aSI6ImQ2ZThjZTk2MThlZDRiMTJiZGJiNDM5M2RlNDI2ZjJmIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.neJpYBMPWlvYtsCwtHvlkUFCDUUkX719emMuybhmyaU HTTP/1.1" 406 110
+WARNING 2026-06-26 15:15:43,163 log 42863 130280402712256 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 15:15:43,165 basehttp 42863 130280402712256 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc2Nzg3LCJpYXQiOjE3ODI0NzU4ODcsImp0aSI6ImQ2ZThjZTk2MThlZDRiMTJiZGJiNDM5M2RlNDI2ZjJmIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.neJpYBMPWlvYtsCwtHvlkUFCDUUkX719emMuybhmyaU HTTP/1.1" 406 110
+WARNING 2026-06-26 15:16:43,181 log 42863 130280402712256 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 15:16:43,183 basehttp 42863 130280402712256 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc2Nzg3LCJpYXQiOjE3ODI0NzU4ODcsImp0aSI6ImQ2ZThjZTk2MThlZDRiMTJiZGJiNDM5M2RlNDI2ZjJmIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.neJpYBMPWlvYtsCwtHvlkUFCDUUkX719emMuybhmyaU HTTP/1.1" 406 110
+WARNING 2026-06-26 15:17:43,190 log 42863 130280402712256 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 15:17:43,190 basehttp 42863 130280402712256 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc2Nzg3LCJpYXQiOjE3ODI0NzU4ODcsImp0aSI6ImQ2ZThjZTk2MThlZDRiMTJiZGJiNDM5M2RlNDI2ZjJmIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.neJpYBMPWlvYtsCwtHvlkUFCDUUkX719emMuybhmyaU HTTP/1.1" 406 110
+WARNING 2026-06-26 15:18:43,206 log 42863 130280402712256 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 15:18:43,208 basehttp 42863 130280402712256 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc2Nzg3LCJpYXQiOjE3ODI0NzU4ODcsImp0aSI6ImQ2ZThjZTk2MThlZDRiMTJiZGJiNDM5M2RlNDI2ZjJmIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.neJpYBMPWlvYtsCwtHvlkUFCDUUkX719emMuybhmyaU HTTP/1.1" 406 110
+WARNING 2026-06-26 15:19:43,232 log 42863 130280402712256 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 15:19:43,234 basehttp 42863 130280402712256 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc2Nzg3LCJpYXQiOjE3ODI0NzU4ODcsImp0aSI6ImQ2ZThjZTk2MThlZDRiMTJiZGJiNDM5M2RlNDI2ZjJmIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.neJpYBMPWlvYtsCwtHvlkUFCDUUkX719emMuybhmyaU HTTP/1.1" 406 110
+WARNING 2026-06-26 15:20:43,253 log 42863 130280402712256 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 15:20:43,254 basehttp 42863 130280402712256 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc2Nzg3LCJpYXQiOjE3ODI0NzU4ODcsImp0aSI6ImQ2ZThjZTk2MThlZDRiMTJiZGJiNDM5M2RlNDI2ZjJmIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.neJpYBMPWlvYtsCwtHvlkUFCDUUkX719emMuybhmyaU HTTP/1.1" 406 110
+WARNING 2026-06-26 15:21:43,269 log 42863 130280402712256 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 15:21:43,271 basehttp 42863 130280402712256 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc2Nzg3LCJpYXQiOjE3ODI0NzU4ODcsImp0aSI6ImQ2ZThjZTk2MThlZDRiMTJiZGJiNDM5M2RlNDI2ZjJmIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.neJpYBMPWlvYtsCwtHvlkUFCDUUkX719emMuybhmyaU HTTP/1.1" 406 110
+WARNING 2026-06-26 15:22:43,284 log 42863 130280402712256 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 15:22:43,284 basehttp 42863 130280402712256 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc2Nzg3LCJpYXQiOjE3ODI0NzU4ODcsImp0aSI6ImQ2ZThjZTk2MThlZDRiMTJiZGJiNDM5M2RlNDI2ZjJmIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.neJpYBMPWlvYtsCwtHvlkUFCDUUkX719emMuybhmyaU HTTP/1.1" 406 110
+WARNING 2026-06-26 15:23:43,293 log 42863 130280402712256 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 15:23:43,294 basehttp 42863 130280402712256 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc2Nzg3LCJpYXQiOjE3ODI0NzU4ODcsImp0aSI6ImQ2ZThjZTk2MThlZDRiMTJiZGJiNDM5M2RlNDI2ZjJmIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.neJpYBMPWlvYtsCwtHvlkUFCDUUkX719emMuybhmyaU HTTP/1.1" 406 110
+WARNING 2026-06-26 15:24:43,307 log 42863 130280402712256 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 15:24:43,308 basehttp 42863 130280402712256 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc2Nzg3LCJpYXQiOjE3ODI0NzU4ODcsImp0aSI6ImQ2ZThjZTk2MThlZDRiMTJiZGJiNDM5M2RlNDI2ZjJmIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.neJpYBMPWlvYtsCwtHvlkUFCDUUkX719emMuybhmyaU HTTP/1.1" 406 110
+WARNING 2026-06-26 15:25:43,321 log 42863 130280402712256 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 15:25:43,322 basehttp 42863 130280402712256 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc2Nzg3LCJpYXQiOjE3ODI0NzU4ODcsImp0aSI6ImQ2ZThjZTk2MThlZDRiMTJiZGJiNDM5M2RlNDI2ZjJmIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.neJpYBMPWlvYtsCwtHvlkUFCDUUkX719emMuybhmyaU HTTP/1.1" 406 110
+WARNING 2026-06-26 15:26:27,811 log 42863 130280402712256 Unauthorized: /api/v1/notifications/unread-count/
+WARNING 2026-06-26 15:26:27,813 basehttp 42863 130280402712256 "GET /api/v1/notifications/unread-count/ HTTP/1.1" 401 478
+WARNING 2026-06-26 15:26:43,331 log 42863 130280402712256 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 15:26:43,332 basehttp 42863 130280402712256 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc3Njg3LCJpYXQiOjE3ODI0NzU4ODcsImp0aSI6IjAzMDllMWIyNTNiMzRkNmZhZGUwYzk5NDgxN2YwOTNiIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.wvFAULozhXVRnZPylJ3uCP15wNpxUqLvRi45mInPj6A HTTP/1.1" 406 110
+WARNING 2026-06-26 15:27:43,353 log 42863 130280402712256 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 15:27:43,356 basehttp 42863 130280402712256 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc3Njg3LCJpYXQiOjE3ODI0NzU4ODcsImp0aSI6IjAzMDllMWIyNTNiMzRkNmZhZGUwYzk5NDgxN2YwOTNiIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.wvFAULozhXVRnZPylJ3uCP15wNpxUqLvRi45mInPj6A HTTP/1.1" 406 110
+WARNING 2026-06-26 15:28:43,373 log 42863 130280402712256 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 15:28:43,374 basehttp 42863 130280402712256 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc3Njg3LCJpYXQiOjE3ODI0NzU4ODcsImp0aSI6IjAzMDllMWIyNTNiMzRkNmZhZGUwYzk5NDgxN2YwOTNiIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.wvFAULozhXVRnZPylJ3uCP15wNpxUqLvRi45mInPj6A HTTP/1.1" 406 110
+WARNING 2026-06-26 15:29:43,384 log 42863 130280402712256 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 15:29:43,389 basehttp 42863 130280402712256 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc3Njg3LCJpYXQiOjE3ODI0NzU4ODcsImp0aSI6IjAzMDllMWIyNTNiMzRkNmZhZGUwYzk5NDgxN2YwOTNiIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.wvFAULozhXVRnZPylJ3uCP15wNpxUqLvRi45mInPj6A HTTP/1.1" 406 110
+WARNING 2026-06-26 15:30:43,409 log 42863 130280402712256 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 15:30:43,409 basehttp 42863 130280402712256 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc3Njg3LCJpYXQiOjE3ODI0NzU4ODcsImp0aSI6IjAzMDllMWIyNTNiMzRkNmZhZGUwYzk5NDgxN2YwOTNiIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.wvFAULozhXVRnZPylJ3uCP15wNpxUqLvRi45mInPj6A HTTP/1.1" 406 110
+WARNING 2026-06-26 15:31:43,422 log 42863 130280402712256 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 15:31:43,424 basehttp 42863 130280402712256 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc3Njg3LCJpYXQiOjE3ODI0NzU4ODcsImp0aSI6IjAzMDllMWIyNTNiMzRkNmZhZGUwYzk5NDgxN2YwOTNiIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.wvFAULozhXVRnZPylJ3uCP15wNpxUqLvRi45mInPj6A HTTP/1.1" 406 110
+WARNING 2026-06-26 15:32:43,443 log 42863 130280402712256 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 15:32:43,445 basehttp 42863 130280402712256 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc3Njg3LCJpYXQiOjE3ODI0NzU4ODcsImp0aSI6IjAzMDllMWIyNTNiMzRkNmZhZGUwYzk5NDgxN2YwOTNiIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.wvFAULozhXVRnZPylJ3uCP15wNpxUqLvRi45mInPj6A HTTP/1.1" 406 110
+WARNING 2026-06-26 15:33:43,459 log 42863 130280402712256 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 15:33:43,460 basehttp 42863 130280402712256 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc3Njg3LCJpYXQiOjE3ODI0NzU4ODcsImp0aSI6IjAzMDllMWIyNTNiMzRkNmZhZGUwYzk5NDgxN2YwOTNiIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.wvFAULozhXVRnZPylJ3uCP15wNpxUqLvRi45mInPj6A HTTP/1.1" 406 110
+WARNING 2026-06-26 15:34:43,481 log 42863 130280402712256 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 15:34:43,485 basehttp 42863 130280402712256 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc3Njg3LCJpYXQiOjE3ODI0NzU4ODcsImp0aSI6IjAzMDllMWIyNTNiMzRkNmZhZGUwYzk5NDgxN2YwOTNiIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.wvFAULozhXVRnZPylJ3uCP15wNpxUqLvRi45mInPj6A HTTP/1.1" 406 110
+WARNING 2026-06-26 15:35:43,499 log 42863 130280402712256 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 15:35:43,501 basehttp 42863 130280402712256 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc3Njg3LCJpYXQiOjE3ODI0NzU4ODcsImp0aSI6IjAzMDllMWIyNTNiMzRkNmZhZGUwYzk5NDgxN2YwOTNiIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.wvFAULozhXVRnZPylJ3uCP15wNpxUqLvRi45mInPj6A HTTP/1.1" 406 110
+WARNING 2026-06-26 15:36:43,565 log 42863 130280402712256 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 15:36:43,566 basehttp 42863 130280402712256 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc3Njg3LCJpYXQiOjE3ODI0NzU4ODcsImp0aSI6IjAzMDllMWIyNTNiMzRkNmZhZGUwYzk5NDgxN2YwOTNiIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.wvFAULozhXVRnZPylJ3uCP15wNpxUqLvRi45mInPj6A HTTP/1.1" 406 110
+WARNING 2026-06-26 15:37:43,658 log 42863 130280402712256 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 15:37:43,665 basehttp 42863 130280402712256 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc3Njg3LCJpYXQiOjE3ODI0NzU4ODcsImp0aSI6IjAzMDllMWIyNTNiMzRkNmZhZGUwYzk5NDgxN2YwOTNiIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.wvFAULozhXVRnZPylJ3uCP15wNpxUqLvRi45mInPj6A HTTP/1.1" 406 110
+WARNING 2026-06-26 15:38:44,545 log 42863 130280402712256 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 15:38:44,577 basehttp 42863 130280402712256 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc3Njg3LCJpYXQiOjE3ODI0NzU4ODcsImp0aSI6IjAzMDllMWIyNTNiMzRkNmZhZGUwYzk5NDgxN2YwOTNiIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.wvFAULozhXVRnZPylJ3uCP15wNpxUqLvRi45mInPj6A HTTP/1.1" 406 110
+WARNING 2026-06-26 15:39:45,240 log 42863 130280402712256 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 15:39:45,244 basehttp 42863 130280402712256 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc3Njg3LCJpYXQiOjE3ODI0NzU4ODcsImp0aSI6IjAzMDllMWIyNTNiMzRkNmZhZGUwYzk5NDgxN2YwOTNiIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.wvFAULozhXVRnZPylJ3uCP15wNpxUqLvRi45mInPj6A HTTP/1.1" 406 110
+WARNING 2026-06-26 15:40:45,285 log 42863 130280402712256 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 15:40:45,288 basehttp 42863 130280402712256 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc3Njg3LCJpYXQiOjE3ODI0NzU4ODcsImp0aSI6IjAzMDllMWIyNTNiMzRkNmZhZGUwYzk5NDgxN2YwOTNiIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.wvFAULozhXVRnZPylJ3uCP15wNpxUqLvRi45mInPj6A HTTP/1.1" 406 110
+WARNING 2026-06-26 15:41:28,015 log 42863 130280402712256 Unauthorized: /api/v1/notifications/unread-count/
+WARNING 2026-06-26 15:41:28,024 basehttp 42863 130280402712256 "GET /api/v1/notifications/unread-count/ HTTP/1.1" 401 478
+WARNING 2026-06-26 15:41:28,147 log 42863 130280402712256 Unauthorized: /api/v1/auth/token/refresh/
+WARNING 2026-06-26 15:41:28,149 basehttp 42863 130280402712256 "POST /api/v1/auth/token/refresh/ HTTP/1.1" 401 214
+WARNING 2026-06-26 15:59:48,847 log 42863 130280157333184 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 15:59:48,966 basehttp 42863 130280157333184 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc5NjY0LCJpYXQiOjE3ODI0Nzg3NjQsImp0aSI6IjhlN2FmN2RmZjc2YjQwOGFhYTQ0NzM0MTM2ODk2OWQ1IiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.Kk-6h478z0SFPDJtLeDkU6fnIw_vv0BBg6SxqMvv-tg HTTP/1.1" 406 110
+WARNING 2026-06-26 16:00:04,643 log 42863 130280157333184 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 16:00:04,655 basehttp 42863 130280157333184 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc5NjY0LCJpYXQiOjE3ODI0Nzg3NjQsImp0aSI6IjhlN2FmN2RmZjc2YjQwOGFhYTQ0NzM0MTM2ODk2OWQ1IiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.Kk-6h478z0SFPDJtLeDkU6fnIw_vv0BBg6SxqMvv-tg HTTP/1.1" 406 110
+WARNING 2026-06-26 16:00:15,034 log 42863 130280157333184 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 16:00:15,060 basehttp 42863 130280157333184 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc5NjY0LCJpYXQiOjE3ODI0Nzg3NjQsImp0aSI6IjhlN2FmN2RmZjc2YjQwOGFhYTQ0NzM0MTM2ODk2OWQ1IiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.Kk-6h478z0SFPDJtLeDkU6fnIw_vv0BBg6SxqMvv-tg HTTP/1.1" 406 110
+WARNING 2026-06-26 16:00:58,744 log 42863 130280394319552 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 16:00:58,838 basehttp 42863 130280394319552 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc5NjY0LCJpYXQiOjE3ODI0Nzg3NjQsImp0aSI6IjhlN2FmN2RmZjc2YjQwOGFhYTQ0NzM0MTM2ODk2OWQ1IiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.Kk-6h478z0SFPDJtLeDkU6fnIw_vv0BBg6SxqMvv-tg HTTP/1.1" 406 110
+WARNING 2026-06-26 16:01:56,216 log 42863 130280157333184 Not Acceptable: /api/v1/integration/notifications/stream/
+WARNING 2026-06-26 16:01:56,356 basehttp 42863 130280157333184 "GET /api/v1/integration/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyNDc5NjY0LCJpYXQiOjE3ODI0Nzg3NjQsImp0aSI6IjhlN2FmN2RmZjc2YjQwOGFhYTQ0NzM0MTM2ODk2OWQ1IiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.Kk-6h478z0SFPDJtLeDkU6fnIw_vv0BBg6SxqMvv-tg HTTP/1.1" 406 110

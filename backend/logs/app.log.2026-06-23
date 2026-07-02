@@ -1,0 +1,306 @@
+WARNING 2026-06-23 11:32:54,465 log 26663 138154712391808 Not Found: /auth/login/
+WARNING 2026-06-23 11:32:56,374 log 26663 138154712391808 Not Found: /auth/login/
+WARNING 2026-06-23 11:32:58,241 log 26663 138154712391808 Not Found: /profile
+WARNING 2026-06-23 11:32:59,996 log 26663 138154712391808 Not Found: /profile
+WARNING 2026-06-23 11:33:05,046 log 26663 138154712391808 Not Found: /national-id/initiate/
+WARNING 2026-06-23 11:33:08,641 log 26663 138154712391808 Not Found: /national-id/initiate/
+WARNING 2026-06-23 11:33:12,809 log 26663 138154712391808 Not Found: /national-id/initiate/
+WARNING 2026-06-23 11:33:18,615 log 26663 138154712391808 Not Found: /national-id/initiate/
+WARNING 2026-06-23 11:33:20,549 log 26663 138154712391808 Not Found: /auth/login/
+WARNING 2026-06-23 11:33:22,412 log 26663 138154712391808 Not Found: /auth/login/
+WARNING 2026-06-23 11:33:26,053 log 26663 138154712391808 Not Found: /auth/login/
+WARNING 2026-06-23 11:33:26,058 log 26663 138154712391808 Not Found: /auth/register/
+WARNING 2026-06-23 11:33:26,064 log 26663 138154712391808 Not Found: /auth/register/
+WARNING 2026-06-23 11:33:26,066 log 26663 138154712391808 Not Found: /auth/register/
+WARNING 2026-06-23 11:33:26,070 log 26663 138154712391808 Not Found: /auth/register/
+WARNING 2026-06-23 11:33:26,075 log 26663 138154712391808 Not Found: /auth/register/
+WARNING 2026-06-23 11:33:26,078 log 26663 138154712391808 Not Found: /auth/register/
+WARNING 2026-06-23 11:33:26,082 log 26663 138154712391808 Not Found: /auth/register/
+WARNING 2026-06-23 11:33:26,086 log 26663 138154712391808 Not Found: /auth/register/
+WARNING 2026-06-23 11:33:26,090 log 26663 138154712391808 Not Found: /auth/register/
+WARNING 2026-06-23 14:29:50,480 log 61793 130165359244992 Unauthorized: /api/national-id/initiate/
+WARNING 2026-06-23 14:29:50,485 basehttp 61793 130165359244992 "POST /api/national-id/initiate/ HTTP/1.1" 401 110
+WARNING 2026-06-23 14:35:06,554 log 63965 132554071996096 Bad Request: /api/national-id/initiate/
+WARNING 2026-06-23 14:35:06,557 basehttp 63965 132554071996096 "POST /api/national-id/initiate/ HTTP/1.1" 400 89
+WARNING 2026-06-23 14:35:07,655 log 63965 132554071996096 Bad Request: /api/national-id/initiate/
+WARNING 2026-06-23 14:35:07,655 basehttp 63965 132554071996096 "POST /api/national-id/initiate/ HTTP/1.1" 400 89
+WARNING 2026-06-23 14:35:08,299 log 63965 132554071996096 Bad Request: /api/national-id/initiate/
+WARNING 2026-06-23 14:35:08,300 basehttp 63965 132554071996096 "POST /api/national-id/initiate/ HTTP/1.1" 400 89
+WARNING 2026-06-23 14:36:56,393 log 63965 132554071996096 Bad Request: /api/national-id/initiate/
+WARNING 2026-06-23 14:36:56,405 basehttp 63965 132554071996096 "POST /api/national-id/initiate/ HTTP/1.1" 400 89
+WARNING 2026-06-23 14:37:37,643 log 63965 132554071996096 Bad Request: /api/national-id/initiate/
+WARNING 2026-06-23 14:37:37,645 basehttp 63965 132554071996096 "POST /api/national-id/initiate/ HTTP/1.1" 400 89
+WARNING 2026-06-23 14:37:38,490 log 63965 132554071996096 Bad Request: /api/national-id/initiate/
+WARNING 2026-06-23 14:37:38,491 basehttp 63965 132554071996096 "POST /api/national-id/initiate/ HTTP/1.1" 400 89
+WARNING 2026-06-23 14:37:44,909 log 63965 132554071996096 Bad Request: /api/national-id/initiate/
+WARNING 2026-06-23 14:37:44,910 basehttp 63965 132554071996096 "POST /api/national-id/initiate/ HTTP/1.1" 400 89
+WARNING 2026-06-23 14:38:28,004 log 63965 132554071996096 Bad Request: /api/national-id/initiate/
+WARNING 2026-06-23 14:38:28,004 basehttp 63965 132554071996096 "POST /api/national-id/initiate/ HTTP/1.1" 400 89
+ERROR 2026-06-23 14:48:54,270 log 69604 123203789780672 Internal Server Error: /api/national-id/initiate/
+Traceback (most recent call last):
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/apps/national_id/views/verify.py", line 24, in post
+    print(f"InitiateView POST request.body = {request.body}")
+                                              ^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/rest_framework/request.py", line 421, in __getattr__
+    return getattr(_request, attr)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/http/request.py", line 328, in body
+    raise RawPostDataException(
+django.http.request.RawPostDataException: You cannot access body after reading from request's data stream
+ERROR 2026-06-23 14:48:54,274 basehttp 69604 123203789780672 "POST /api/national-id/initiate/ HTTP/1.1" 500 25715
+ERROR 2026-06-23 14:50:46,222 log 69604 123203789780672 Internal Server Error: /api/national-id/initiate/
+Traceback (most recent call last):
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/apps/national_id/views/verify.py", line 24, in post
+    print(f"InitiateView POST request.body = {request.body}")
+                                              ^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/rest_framework/request.py", line 421, in __getattr__
+    return getattr(_request, attr)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/http/request.py", line 328, in body
+    raise RawPostDataException(
+django.http.request.RawPostDataException: You cannot access body after reading from request's data stream
+ERROR 2026-06-23 14:50:46,227 basehttp 69604 123203789780672 "POST /api/national-id/initiate/ HTTP/1.1" 500 25715
+ERROR 2026-06-23 14:51:52,118 log 72345 133404781704896 Internal Server Error: /api/national-id/initiate/
+Traceback (most recent call last):
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/apps/national_id/views/verify.py", line 24, in post
+    print(f"InitiateView POST request.body = {request.body}")
+                                              ^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/rest_framework/request.py", line 421, in __getattr__
+    return getattr(_request, attr)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/.venv/lib/python3.12/site-packages/django/http/request.py", line 328, in body
+    raise RawPostDataException(
+django.http.request.RawPostDataException: You cannot access body after reading from request's data stream
+ERROR 2026-06-23 14:51:52,122 basehttp 72345 133404781704896 "POST /api/national-id/initiate/ HTTP/1.1" 500 125251
+WARNING 2026-06-23 14:57:45,185 log 73898 134341543851712 Not Found: /api/national-id/profile/ET123456789/
+WARNING 2026-06-23 14:57:45,187 basehttp 73898 134341543851712 "GET /api/national-id/profile/ET123456789/ HTTP/1.1" 404 5665
+WARNING 2026-06-23 14:58:00,675 log 73898 134341543851712 Not Found: /api/holder/register/
+WARNING 2026-06-23 14:58:00,675 basehttp 73898 134341543851712 "POST /api/holder/register/ HTTP/1.1" 404 4757
+WARNING 2026-06-23 15:23:42,120 log 80912 134710517823168 Not Found: /api/holder/register/
+WARNING 2026-06-23 15:23:42,130 basehttp 80912 134710517823168 "POST /api/holder/register/ HTTP/1.1" 404 4758
+WARNING 2026-06-23 15:30:53,102 log 80912 134710517823168 Bad Request: /api/auth/register/
+WARNING 2026-06-23 15:30:53,104 basehttp 80912 134710517823168 "POST /api/auth/register/ HTTP/1.1" 400 88
+WARNING 2026-06-23 15:34:53,491 log 80912 134710517823168 Bad Request: /api/auth/register/
+WARNING 2026-06-23 15:34:53,494 basehttp 80912 134710517823168 "POST /api/auth/register/ HTTP/1.1" 400 88
+WARNING 2026-06-23 15:42:08,525 log 80912 134710517823168 Bad Request: /api/auth/register/
+WARNING 2026-06-23 15:42:08,529 basehttp 80912 134710517823168 "POST /api/auth/register/ HTTP/1.1" 400 88
+WARNING 2026-06-23 15:45:44,564 log 80912 134710517823168 Bad Request: /api/auth/register/
+WARNING 2026-06-23 15:45:44,566 basehttp 80912 134710517823168 "POST /api/auth/register/ HTTP/1.1" 400 88
+WARNING 2026-06-23 15:46:00,319 log 80912 134710517823168 Bad Request: /api/auth/register/
+WARNING 2026-06-23 15:46:00,320 basehttp 80912 134710517823168 "POST /api/auth/register/ HTTP/1.1" 400 88
+WARNING 2026-06-23 15:54:29,479 log 80912 134710517823168 Bad Request: /api/auth/register/
+WARNING 2026-06-23 15:54:29,657 basehttp 80912 134710517823168 "POST /api/auth/register/ HTTP/1.1" 400 88
+WARNING 2026-06-23 21:40:56,122 log 18338 133006595454656 Not Found: /api/issuer/notifications/unread-count/
+WARNING 2026-06-23 21:40:56,125 basehttp 18338 133006595454656 "GET /api/issuer/notifications/unread-count/ HTTP/1.1" 404 4805
+WARNING 2026-06-23 21:40:58,327 log 18338 133006595454656 Unauthorized: /api/integration/sync/logs/
+WARNING 2026-06-23 21:40:58,332 basehttp 18338 133006595454656 "GET /api/integration/sync/logs/ HTTP/1.1" 401 478
+WARNING 2026-06-23 21:40:58,406 log 18338 133006587061952 Unauthorized: /api/integration/sync/logs/
+WARNING 2026-06-23 21:40:58,415 basehttp 18338 133006587061952 "GET /api/integration/sync/logs/ HTTP/1.1" 401 478
+WARNING 2026-06-23 21:40:59,126 log 18338 133006595454656 Forbidden: /api/integration/analytics/
+WARNING 2026-06-23 21:40:59,126 basehttp 18338 133006595454656 "GET /api/integration/analytics/ HTTP/1.1" 403 109
+WARNING 2026-06-23 21:40:59,189 log 18338 133006595454656 Forbidden: /api/integration/analytics/
+WARNING 2026-06-23 21:40:59,195 basehttp 18338 133006595454656 "GET /api/integration/analytics/ HTTP/1.1" 403 109
+WARNING 2026-06-23 21:41:00,007 log 18338 133006578669248 Forbidden: /api/integration/analytics/
+WARNING 2026-06-23 21:41:00,053 basehttp 18338 133006578669248 "GET /api/integration/analytics/ HTTP/1.1" 403 109
+WARNING 2026-06-23 21:41:00,169 log 18338 133006570276544 Forbidden: /api/integration/analytics/
+WARNING 2026-06-23 21:41:00,213 basehttp 18338 133006570276544 "GET /api/integration/analytics/ HTTP/1.1" 403 109
+ERROR 2026-06-23 21:41:00,378 log 18338 133006587061952 Internal Server Error: /api/integration/organization/
+Traceback (most recent call last):
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/apps/issuer/views/organization.py", line 16, in get
+    org = Organization.objects.get(created_by=request.user)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 635, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1609, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1641, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1491, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1303, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1768, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'created_by' into field. Choices are: accreditation, address, api_token, api_token_encrypted, approved_at, approved_by, approved_by_id, base_api_url, brand_color, contact_person, created_at, credential_org, credentials, did, did_id, email, holder_mappings, id, integration_config, logo, members, name, org_type, org_type_id, phone, platform_webhook_secret, platform_webhook_secret_encrypted, platform_webhook_url, public_key, public_key_verified_at, seal, status, sync_logs, updated_at, website
+ERROR 2026-06-23 21:41:00,395 basehttp 18338 133006587061952 "GET /api/integration/organization/ HTTP/1.1" 500 161051
+ERROR 2026-06-23 21:41:00,695 log 18338 133006595454656 Internal Server Error: /api/integration/organization/
+Traceback (most recent call last):
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/apps/issuer/views/organization.py", line 16, in get
+    org = Organization.objects.get(created_by=request.user)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 635, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1609, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1641, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1491, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1303, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1768, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'created_by' into field. Choices are: accreditation, address, api_token, api_token_encrypted, approved_at, approved_by, approved_by_id, base_api_url, brand_color, contact_person, created_at, credential_org, credentials, did, did_id, email, holder_mappings, id, integration_config, logo, members, name, org_type, org_type_id, phone, platform_webhook_secret, platform_webhook_secret_encrypted, platform_webhook_url, public_key, public_key_verified_at, seal, status, sync_logs, updated_at, website
+ERROR 2026-06-23 21:41:00,709 basehttp 18338 133006595454656 "GET /api/integration/organization/ HTTP/1.1" 500 161051
+WARNING 2026-06-23 21:41:11,193 log 18338 133006595454656 Not Found: /api/issuer/notifications/stream/
+WARNING 2026-06-23 21:41:11,194 basehttp 18338 133006595454656 "GET /api/issuer/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyMjQwOTU4LCJpYXQiOjE3ODIxNDQ0MTUsImp0aSI6IjVlM2Q5NzNkZWRjNzQzNjQ4ODIyMzRiYTZiMDVhZDliIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.PGyMX63Zc0Ks5Bh0w9DSzbXGdnAkuM2yPCSA90fu_HA HTTP/1.1" 404 5093
+WARNING 2026-06-23 21:41:39,251 log 18338 133006595454656 Bad Request: /api/auth/logout/
+WARNING 2026-06-23 21:41:39,251 basehttp 18338 133006595454656 "POST /api/auth/logout/ HTTP/1.1" 400 66

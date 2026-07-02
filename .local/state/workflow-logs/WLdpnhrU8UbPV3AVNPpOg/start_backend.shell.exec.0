@@ -1,0 +1,37 @@
+Performing system checks...
+
+/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/fields.py:990: UserWarning: max_value should be a Decimal instance.
+  warnings.warn("max_value should be a Decimal instance.")
+/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/fields.py:992: UserWarning: min_value should be a Decimal instance.
+  warnings.warn("min_value should be a Decimal instance.")
+System check identified no issues (0 silenced).
+June 22, 2026 - 17:43:53
+Django version 5.1.4, using settings 'config.settings.development'
+Starting development server at http://localhost:8000/
+Quit the server with CONTROL-C.
+
+ERROR 2026-06-22 17:44:01,483 live_sync_service 9798 140075551684288 LiveSync: failed for org Addis Ababa University: Cannot connect to org API at http://localhost:3001 — is the mock org API running?
+ERROR 2026-06-22 17:44:01,496 log 9798 140075551684288 Bad Gateway: /api/integration/sync/
+ERROR 2026-06-22 17:44:01,497 basehttp 9798 140075551684288 "POST /api/integration/sync/ HTTP/1.1" 502 112
+ERROR 2026-06-22 17:44:44,487 live_sync_service 9798 140075551684288 LiveSync: failed for org Addis Ababa University: Cannot connect to org API at http://localhost:3001 — is the mock org API running?
+ERROR 2026-06-22 17:44:44,497 log 9798 140075551684288 Bad Gateway: /api/integration/sync/
+ERROR 2026-06-22 17:44:44,497 basehttp 9798 140075551684288 "POST /api/integration/sync/ HTTP/1.1" 502 112
+INFO 2026-06-22 17:45:18,898 _client 9798 140075551684288 HTTP Request: GET http://localhost:3001/university/members "HTTP/1.1 200 OK"
+WARNING 2026-06-22 17:45:18,902 live_sync_service 9798 140075551684288 LiveSync: failed to process record {'national_id': 'NID-1234567890', 'membership_number': 'STU-2024-001', 'full_name': 'Amara Osei', 'email': 'amara.osei@testuniversity.edu', 'phone': '+233200000001', 'programme': 'Computer Science', 'department': 'Science & Engineering', 'year': 3, 'gpa': 3.7, 'status': 'active', 'enrollment_date': '2022-09-01', 'graduation_year': 2026}: module 'django.utils.timezone' has no attribute 'utc'
+WARNING 2026-06-22 17:45:18,904 live_sync_service 9798 140075551684288 LiveSync: failed to process record {'national_id': 'NID-0987654321', 'membership_number': 'STU-2024-002', 'full_name': 'Kwabena Mensah', 'email': 'kwabena.mensah@testuniversity.edu', 'phone': '+233200000002', 'programme': 'Electrical Engineering', 'department': 'Science & Engineering', 'year': 2, 'gpa': 3.2, 'status': 'active', 'enrollment_date': '2023-09-01', 'graduation_year': 2027}: module 'django.utils.timezone' has no attribute 'utc'
+WARNING 2026-06-22 17:45:18,905 live_sync_service 9798 140075551684288 LiveSync: failed to process record {'national_id': 'NID-1111111111', 'membership_number': 'STU-2024-003', 'full_name': 'Aba Ansah', 'email': 'aba.ansah@testuniversity.edu', 'phone': '+233200000003', 'programme': 'Business Administration', 'department': 'Business School', 'year': 4, 'gpa': 3.9, 'status': 'active', 'enrollment_date': '2021-09-01', 'graduation_year': 2025}: module 'django.utils.timezone' has no attribute 'utc'
+WARNING 2026-06-22 17:45:18,906 live_sync_service 9798 140075551684288 LiveSync: failed to process record {'national_id': 'NID-2222222222', 'membership_number': 'STU-2023-010', 'full_name': 'Kofi Asante', 'email': 'kofi.asante@testuniversity.edu', 'phone': '+233200000004', 'programme': 'Medicine', 'department': 'Health Sciences', 'year': 5, 'gpa': 3.5, 'status': 'active', 'enrollment_date': '2020-09-01', 'graduation_year': 2025}: module 'django.utils.timezone' has no attribute 'utc'
+WARNING 2026-06-22 17:45:18,907 live_sync_service 9798 140075551684288 LiveSync: failed to process record {'national_id': 'NID-3333333333', 'membership_number': 'STU-2024-015', 'full_name': 'Abena Boateng', 'email': 'abena.boateng@testuniversity.edu', 'phone': '+233200000005', 'programme': 'Law', 'department': 'Law School', 'year': 1, 'gpa': 3.1, 'status': 'active', 'enrollment_date': '2024-09-01', 'graduation_year': 2028}: module 'django.utils.timezone' has no attribute 'utc'
+WARNING 2026-06-22 17:45:18,909 live_sync_service 9798 140075551684288 LiveSync: failed to process record {'national_id': 'NID-4444444444', 'membership_number': 'STU-2023-020', 'full_name': 'Yaw Darko', 'email': 'yaw.darko@testuniversity.edu', 'phone': '+233200000006', 'programme': 'Computer Science', 'department': 'Science & Engineering', 'year': 4, 'gpa': 2.9, 'status': 'inactive', 'enrollment_date': '2021-09-01', 'graduation_year': 2025}: module 'django.utils.timezone' has no attribute 'utc'
+Performing system checks...
+
+/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/fields.py:990: UserWarning: max_value should be a Decimal instance.
+  warnings.warn("max_value should be a Decimal instance.")
+/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/fields.py:992: UserWarning: min_value should be a Decimal instance.
+  warnings.warn("min_value should be a Decimal instance.")
+System check identified no issues (0 silenced).
+June 22, 2026 - 17:45:29
+Django version 5.1.4, using settings 'config.settings.development'
+Starting development server at http://localhost:8000/
+Quit the server with CONTROL-C.
+

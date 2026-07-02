@@ -1,0 +1,24 @@
+
+✅ Mock Multi-Org API running at http://localhost:3001
+   API Key: mock-api-key-for-testing
+   University members: 6
+   Government records: 5
+   Employer records:   5
+
+Org-specific endpoints:
+   POST /university/members/verify
+   POST /government/records/verify
+   POST /employer/employees/verify
+
+List endpoints (no auth):
+   GET  /university/members
+   GET  /government/records
+   GET  /employer/employees
+
+Legacy (backward-compat):
+   POST /api/members/verify
+
+[2026-06-22T14:45:18.892Z] GET /university/members {}
+[2026-06-22T14:45:46.139Z] GET /university/members {}
+[2026-06-22T14:45:46.396Z] GET /employer/employees {}
+[2026-06-22T14:45:46.639Z] GET /university/members {}

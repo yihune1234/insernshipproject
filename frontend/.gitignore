@@ -1,0 +1,69 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+/home/yihunebelay/wallet/DigitalCredentialWallet/doc
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Build output
+build
+*.tsbuildinfo
+
+# Test coverage
+coverage
+coverage.json
+
+# ESLint cache
+.eslintcache
+.turbo
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+# Misc
+*.bak
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# Documentation drafts (uncomment if needed)
+# admin.md
+#ARCHITECTURE_GUIDE.md
+# PAGES_DIRECTORY_PURPOSE.md
+# PAGES_MIGRATION_PLAN.md
+# PROJECT_SUMMARY.md
+# HOLDER_* documentation files
+HOLDER_FILES_MANIFEST.md
+HOLDER_MODULE_COMPLETE.md
+HOLDER_MODULE_STRUCTURE_COMPLETE.md
+HOLDER_MODULE_FINAL_SUMMARY.md

@@ -1,0 +1,879 @@
+ERROR 2026-06-22 11:57:56,331 log 3151 140292276614848 Internal Server Error: /api/auth/register/
+Traceback (most recent call last):
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/django_redis/cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/django_redis/cache.py", line 81, in set
+    return self.client.set(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/django_redis/client/default.py", line 185, in set
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 111 connecting to localhost:6379. Connection refused.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/artifacts/api-server/backend/apps/accounts/views/auth.py", line 32, in post
+    user = AuthService.register(**serializer.validated_data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/artifacts/api-server/backend/apps/accounts/services/auth_service.py", line 23, in register
+    otp = OTPService.generate(purpose="registration", identifier=email)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/artifacts/api-server/backend/apps/accounts/services/otp_service.py", line 16, in generate
+    cache.set(cache_key, otp, timeout=600)
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/django_redis/cache.py", line 36, in _decorator
+    raise e.__cause__
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/django_redis/client/default.py", line 175, in set
+    return bool(client.set(nkey, nvalue, nx=nx, px=timeout, xx=xx))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/redis/commands/core.py", line 2335, in set
+    return self.execute_command("SET", *pieces, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/redis/client.py", line 559, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/redis/client.py", line 565, in _execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/redis/connection.py", line 1422, in get_connection
+    connection.connect()
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/redis/connection.py", line 363, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to localhost:6379. Connection refused.
+ERROR 2026-06-22 11:57:56,334 basehttp 3151 140292276614848 "POST /api/auth/register/ HTTP/1.1" 500 194781
+WARNING 2026-06-22 11:58:01,199 log 3151 140292276614848 Bad Request: /api/auth/register/
+WARNING 2026-06-22 11:58:01,200 basehttp 3151 140292276614848 "POST /api/auth/register/ HTTP/1.1" 400 53
+WARNING 2026-06-22 11:58:36,062 log 3347 140423245854400 Unauthorized: /api/auth/login/
+WARNING 2026-06-22 11:58:36,064 basehttp 3347 140423245854400 "POST /api/auth/login/ HTTP/1.1" 401 48
+WARNING 2026-06-22 11:58:36,326 log 3347 140423245854400 Not Found: /api/verify/
+WARNING 2026-06-22 11:58:36,327 basehttp 3347 140423245854400 "POST /api/verify/ HTTP/1.1" 404 4720
+WARNING 2026-06-22 11:58:41,036 log 3347 140423245854400 Not Found: /api/verify/
+WARNING 2026-06-22 11:58:41,038 basehttp 3347 140423245854400 "POST /api/verify/ HTTP/1.1" 404 4720
+WARNING 2026-06-22 11:59:20,164 log 3580 139664350508736 Unauthorized: /api/auth/me/
+WARNING 2026-06-22 11:59:20,165 basehttp 3580 139664350508736 "GET /api/auth/me/ HTTP/1.1" 401 275
+WARNING 2026-06-22 11:59:20,217 log 3580 139664350508736 Unauthorized: /api/credentials/
+WARNING 2026-06-22 11:59:20,218 basehttp 3580 139664350508736 "GET /api/credentials/ HTTP/1.1" 401 275
+WARNING 2026-06-22 11:59:20,272 log 3580 139664350508736 Not Found: /api/wallet/
+WARNING 2026-06-22 11:59:20,273 basehttp 3580 139664350508736 "GET /api/wallet/ HTTP/1.1" 404 7463
+WARNING 2026-06-22 11:59:20,404 log 3580 139664350508736 Not Found: /api/organizations/
+WARNING 2026-06-22 11:59:20,407 basehttp 3580 139664350508736 "GET /api/organizations/ HTTP/1.1" 404 7790
+WARNING 2026-06-22 12:00:08,572 log 3819 139677473437376 Method Not Allowed: /api/did/create/
+WARNING 2026-06-22 12:00:08,572 basehttp 3819 139677473437376 "POST /api/did/create/ HTTP/1.1" 405 88
+WARNING 2026-06-22 12:00:28,501 log 3819 139677473437376 Not Found: /api/trust/
+WARNING 2026-06-22 12:00:28,501 basehttp 3819 139677473437376 "GET /api/trust/ HTTP/1.1" 404 5928
+WARNING 2026-06-22 12:00:28,564 log 3819 139677473437376 Not Found: /api/audit/
+WARNING 2026-06-22 12:00:28,565 basehttp 3819 139677473437376 "GET /api/audit/ HTTP/1.1" 404 5074
+WARNING 2026-06-22 12:00:28,627 log 3819 139677473437376 Not Found: /api/verifier/
+WARNING 2026-06-22 12:00:28,628 basehttp 3819 139677473437376 "GET /api/verifier/ HTTP/1.1" 404 6137
+WARNING 2026-06-22 12:00:28,688 log 3819 139677473437376 Not Found: /api/integration/
+WARNING 2026-06-22 12:00:28,688 basehttp 3819 139677473437376 "GET /api/integration/ HTTP/1.1" 404 6213
+WARNING 2026-06-22 12:00:28,727 log 3819 139677473437376 Not Found: /api/admin-portal/
+WARNING 2026-06-22 12:00:28,727 basehttp 3819 139677473437376 "GET /api/admin-portal/ HTTP/1.1" 404 8911
+WARNING 2026-06-22 12:00:59,638 log 4063 140643953276608 Forbidden: /api/trust/
+WARNING 2026-06-22 12:00:59,639 basehttp 4063 140643953276608 "GET /api/trust/ HTTP/1.1" 403 109
+WARNING 2026-06-22 12:00:59,690 log 4063 140643953276608 Method Not Allowed: /api/verifier/
+WARNING 2026-06-22 12:00:59,690 basehttp 4063 140643953276608 "GET /api/verifier/ HTTP/1.1" 405 87
+WARNING 2026-06-22 12:00:59,740 log 4063 140643953276608 Forbidden: /api/integration/
+WARNING 2026-06-22 12:00:59,740 basehttp 4063 140643953276608 "GET /api/integration/ HTTP/1.1" 403 109
+WARNING 2026-06-22 12:00:59,789 log 4063 140643953276608 Forbidden: /api/audit/
+WARNING 2026-06-22 12:00:59,790 basehttp 4063 140643953276608 "GET /api/audit/ HTTP/1.1" 403 109
+WARNING 2026-06-22 12:00:59,839 log 4063 140643953276608 Forbidden: /api/admin-portal/
+WARNING 2026-06-22 12:00:59,839 basehttp 4063 140643953276608 "GET /api/admin-portal/ HTTP/1.1" 403 109
+WARNING 2026-06-22 12:00:59,894 log 4063 140643953276608 Not Found: /api/national-id/
+WARNING 2026-06-22 12:00:59,894 basehttp 4063 140643953276608 "GET /api/national-id/ HTTP/1.1" 404 5346
+WARNING 2026-06-22 12:01:33,171 log 4223 139963588933312 Forbidden: /api/verifier/
+WARNING 2026-06-22 12:01:33,172 basehttp 4223 139963588933312 "GET /api/verifier/ HTTP/1.1" 403 109
+WARNING 2026-06-22 12:01:33,283 log 4223 139963588933312 Forbidden: /api/trust/
+WARNING 2026-06-22 12:01:33,283 basehttp 4223 139963588933312 "GET /api/trust/ HTTP/1.1" 403 109
+WARNING 2026-06-22 12:01:33,393 log 4223 139963588933312 Forbidden: /api/audit/
+WARNING 2026-06-22 12:01:33,393 basehttp 4223 139963588933312 "GET /api/audit/ HTTP/1.1" 403 109
+WARNING 2026-06-22 12:01:33,491 log 4223 139963588933312 Forbidden: /api/admin-portal/
+WARNING 2026-06-22 12:01:33,491 basehttp 4223 139963588933312 "GET /api/admin-portal/ HTTP/1.1" 403 109
+WARNING 2026-06-22 12:01:33,603 log 4223 139963588933312 Forbidden: /api/integration/
+WARNING 2026-06-22 12:01:33,604 basehttp 4223 139963588933312 "GET /api/integration/ HTTP/1.1" 403 109
+WARNING 2026-06-22 17:16:48,374 log 1515 139876806686400 Not Found: /
+WARNING 2026-06-22 17:16:48,374 basehttp 1515 139876806686400 "GET / HTTP/1.1" 404 4673
+WARNING 2026-06-22 17:16:48,480 log 1515 139876806686400 Not Found: /favicon.ico
+WARNING 2026-06-22 17:16:48,481 basehttp 1515 139876806686400 "GET /favicon.ico HTTP/1.1" 404 4724
+WARNING 2026-06-22 17:22:13,644 log 1515 139876806686400 Not Found: /api/
+WARNING 2026-06-22 17:22:13,644 basehttp 1515 139876806686400 "GET /api/ HTTP/1.1" 404 4703
+WARNING 2026-06-22 17:22:13,725 log 1515 139876806686400 Not Found: /api/auth/
+WARNING 2026-06-22 17:22:13,725 basehttp 1515 139876806686400 "GET /api/auth/ HTTP/1.1" 404 6853
+WARNING 2026-06-22 17:22:25,141 log 1515 139876806686400 Forbidden: /api/credentials/
+WARNING 2026-06-22 17:22:25,141 basehttp 1515 139876806686400 "GET /api/credentials/ HTTP/1.1" 403 109
+ERROR 2026-06-22 17:22:38,477 log 1515 139876806686400 Internal Server Error: /api/admin-portal/organizations/
+Traceback (most recent call last):
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/backend/apps/admin_portal/views/organizations.py", line 14, in get
+    return success_response(data=OrganizationSerializer(orgs, many=True).data)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/serializers.py", line 795, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/serializers.py", line 714, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/serializers.py", line 523, in to_representation
+    for field in fields:
+                 ^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/serializers.py", line 384, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/serializers.py", line 372, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/serializers.py", line 1103, in get_fields
+    field_class, field_kwargs = self.build_field(
+                                ^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/serializers.py", line 1249, in build_field
+    return self.build_unknown_field(field_name, model_class)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/serializers.py", line 1367, in build_unknown_field
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Field name `api_base_url` is not valid for model `Organization` in `apps.organizations.serializers.organization.OrganizationSerializer`.
+ERROR 2026-06-22 17:22:38,479 basehttp 1515 139876806686400 "GET /api/admin-portal/organizations/ HTTP/1.1" 500 194705
+WARNING 2026-06-22 17:22:38,638 log 1515 139876806686400 Forbidden: /api/integration/
+WARNING 2026-06-22 17:22:38,638 basehttp 1515 139876806686400 "GET /api/integration/ HTTP/1.1" 403 109
+WARNING 2026-06-22 17:22:38,858 log 1515 139876806686400 Not Found: /api/verification/
+WARNING 2026-06-22 17:22:38,858 basehttp 1515 139876806686400 "GET /api/verification/ HTTP/1.1" 404 5635
+ERROR 2026-06-22 17:22:59,839 log 1515 139876806686400 Internal Server Error: /api/admin-portal/organizations/
+Traceback (most recent call last):
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/backend/apps/admin_portal/views/organizations.py", line 14, in get
+    return success_response(data=OrganizationSerializer(orgs, many=True).data)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/serializers.py", line 795, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/serializers.py", line 714, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/serializers.py", line 523, in to_representation
+    for field in fields:
+                 ^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/serializers.py", line 384, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/serializers.py", line 372, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/serializers.py", line 1103, in get_fields
+    field_class, field_kwargs = self.build_field(
+                                ^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/serializers.py", line 1249, in build_field
+    return self.build_unknown_field(field_name, model_class)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/serializers.py", line 1367, in build_unknown_field
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Field name `api_base_url` is not valid for model `Organization` in `apps.organizations.serializers.organization.OrganizationSerializer`.
+ERROR 2026-06-22 17:22:59,841 basehttp 1515 139876806686400 "GET /api/admin-portal/organizations/ HTTP/1.1" 500 194705
+WARNING 2026-06-22 17:23:00,054 log 1515 139876806686400 Forbidden: /api/integration/configs/
+WARNING 2026-06-22 17:23:00,055 basehttp 1515 139876806686400 "GET /api/integration/configs/ HTTP/1.1" 403 109
+ERROR 2026-06-22 17:23:24,028 log 1515 139876806686400 Internal Server Error: /api/admin-portal/organizations/
+Traceback (most recent call last):
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/backend/apps/admin_portal/views/organizations.py", line 14, in get
+    return success_response(data=OrganizationSerializer(orgs, many=True).data)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/serializers.py", line 795, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/serializers.py", line 714, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/serializers.py", line 523, in to_representation
+    for field in fields:
+                 ^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/serializers.py", line 384, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/serializers.py", line 372, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/serializers.py", line 1103, in get_fields
+    field_class, field_kwargs = self.build_field(
+                                ^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/serializers.py", line 1249, in build_field
+    return self.build_unknown_field(field_name, model_class)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/serializers.py", line 1367, in build_unknown_field
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Field name `api_base_url` is not valid for model `Organization` in `apps.organizations.serializers.organization.OrganizationSerializer`.
+ERROR 2026-06-22 17:23:24,030 basehttp 1515 139876806686400 "GET /api/admin-portal/organizations/ HTTP/1.1" 500 194705
+ERROR 2026-06-22 17:23:39,493 log 1515 139876806686400 Internal Server Error: /api/admin-portal/organizations/
+Traceback (most recent call last):
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/backend/apps/admin_portal/views/organizations.py", line 14, in get
+    return success_response(data=OrganizationSerializer(orgs, many=True).data)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/serializers.py", line 795, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/serializers.py", line 714, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/serializers.py", line 523, in to_representation
+    for field in fields:
+                 ^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/serializers.py", line 384, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/serializers.py", line 372, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/serializers.py", line 1103, in get_fields
+    field_class, field_kwargs = self.build_field(
+                                ^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/serializers.py", line 1249, in build_field
+    return self.build_unknown_field(field_name, model_class)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/serializers.py", line 1367, in build_unknown_field
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Field name `api_base_url` is not valid for model `Organization` in `apps.organizations.serializers.organization.OrganizationSerializer`.
+ERROR 2026-06-22 17:23:39,494 basehttp 1515 139876806686400 "GET /api/admin-portal/organizations/ HTTP/1.1" 500 194705
+WARNING 2026-06-22 17:25:01,402 log 5875 140077606893248 Method Not Allowed: /api/auth/login/
+WARNING 2026-06-22 17:25:01,402 basehttp 5875 140077606893248 "GET /api/auth/login/ HTTP/1.1" 405 87
+WARNING 2026-06-22 17:25:05,651 log 5875 140077606893248 Not Found: /api/trust/levels/
+WARNING 2026-06-22 17:25:05,651 basehttp 5875 140077606893248 "GET /api/trust/levels/ HTTP/1.1" 404 6197
+WARNING 2026-06-22 17:25:17,334 log 5875 140077606893248 Not Found: /api/trust/levels/
+WARNING 2026-06-22 17:25:17,335 basehttp 5875 140077606893248 "GET /api/trust/levels/ HTTP/1.1" 404 6197
+ERROR 2026-06-22 17:44:01,496 log 9798 140075551684288 Bad Gateway: /api/integration/sync/
+ERROR 2026-06-22 17:44:01,497 basehttp 9798 140075551684288 "POST /api/integration/sync/ HTTP/1.1" 502 112
+ERROR 2026-06-22 17:44:44,497 log 9798 140075551684288 Bad Gateway: /api/integration/sync/
+ERROR 2026-06-22 17:44:44,497 basehttp 9798 140075551684288 "POST /api/integration/sync/ HTTP/1.1" 502 112
+WARNING 2026-06-22 17:56:05,300 log 10696 140219579889344 Not Found: /api/auth/token/
+WARNING 2026-06-22 17:56:05,304 basehttp 10696 140219579889344 "POST /api/auth/token/ HTTP/1.1" 404 6872
+WARNING 2026-06-22 17:56:13,083 log 10696 140219579889344 Not Found: /api/auth/token/
+WARNING 2026-06-22 17:56:13,083 basehttp 10696 140219579889344 "POST /api/auth/token/ HTTP/1.1" 404 6872
+WARNING 2026-06-22 17:56:23,850 log 10696 140219579889344 Not Found: /api/auth/token/
+WARNING 2026-06-22 17:56:23,851 basehttp 10696 140219579889344 "POST /api/auth/token/ HTTP/1.1" 404 6872
+WARNING 2026-06-22 17:56:34,126 log 10696 140219579889344 Not Found: /api/auth/token/
+WARNING 2026-06-22 17:56:34,126 basehttp 10696 140219579889344 "POST /api/auth/token/ HTTP/1.1" 404 6872
+WARNING 2026-06-22 17:56:34,132 log 10696 140219579889344 Bad Request: /api/auth/login/
+WARNING 2026-06-22 17:56:34,133 basehttp 10696 140219579889344 "POST /api/auth/login/ HTTP/1.1" 400 64
+WARNING 2026-06-22 17:56:34,138 log 10696 140219579889344 Not Found: /api/auth/jwt/token/
+WARNING 2026-06-22 17:56:34,139 basehttp 10696 140219579889344 "POST /api/auth/jwt/token/ HTTP/1.1" 404 6884
+WARNING 2026-06-22 17:57:14,894 log 10696 140219579889344 Not Found: /api/wallet/request-catalog/
+WARNING 2026-06-22 17:57:14,895 basehttp 10696 140219579889344 "GET /api/wallet/request-catalog/ HTTP/1.1" 404 7481
+WARNING 2026-06-22 17:57:14,912 log 10696 140219579889344 Not Found: /api/wallet/shares/enable/
+WARNING 2026-06-22 17:57:14,913 basehttp 10696 140219579889344 "GET /api/wallet/shares/enable/ HTTP/1.1" 404 38
+WARNING 2026-06-22 17:59:23,978 log 15410 140238160656064 Not Found: /
+WARNING 2026-06-22 17:59:23,979 basehttp 15410 140238160656064 "GET / HTTP/1.1" 404 4673
+WARNING 2026-06-22 17:59:24,121 log 15410 140238160656064 Not Found: /favicon.ico
+WARNING 2026-06-22 17:59:24,121 basehttp 15410 140238160656064 "GET /favicon.ico HTTP/1.1" 404 4724
+ERROR 2026-06-22 17:59:39,471 log 15410 140238151214784 Internal Server Error: /api/wallet/request-catalog/
+Traceback (most recent call last):
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/backend/apps/holder/views/credentials.py", line 77, in get
+    from apps.credentials.models import CredentialType
+ImportError: cannot import name 'CredentialType' from 'apps.credentials.models' (/home/runner/workspace/backend/apps/credentials/models/__init__.py). Did you mean: 'credentials'?
+ERROR 2026-06-22 17:59:39,476 basehttp 15410 140238151214784 "GET /api/wallet/request-catalog/ HTTP/1.1" 500 137711
+WARNING 2026-06-22 17:59:39,512 log 15410 140238151214784 Method Not Allowed: /api/notifications/mark-all-read/
+WARNING 2026-06-22 17:59:39,512 basehttp 15410 140238151214784 "GET /api/notifications/mark-all-read/ HTTP/1.1" 405 87
+WARNING 2026-06-22 17:59:39,528 log 15410 140238151214784 Not Found: /api/wallet/shares/enable/
+WARNING 2026-06-22 17:59:39,529 basehttp 15410 140238151214784 "POST /api/wallet/shares/enable/ HTTP/1.1" 404 49
+ERROR 2026-06-22 18:19:20,288 log 6930 135271175681728 Internal Server Error: /api/issuer/notifications/unread-count/
+Traceback (most recent call last):
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/urls/base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^
+KeyError: 'djdt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/debug_toolbar/middleware.py", line 97, in __call__
+    rendered = toolbar.render_toolbar()
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/debug_toolbar/toolbar.py", line 84, in render_toolbar
+    return render_to_string("debug_toolbar/base.html", context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/test/utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/template/defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/urls/base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'djdt' is not a registered namespace
+ERROR 2026-06-22 18:19:20,293 basehttp 6930 135271175681728 "OPTIONS /api/issuer/notifications/unread-count/ HTTP/1.1" 500 143578
+ERROR 2026-06-22 18:19:33,649 log 6930 135271175681728 Internal Server Error: /api/auth/logout/
+Traceback (most recent call last):
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/urls/base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^
+KeyError: 'djdt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/debug_toolbar/middleware.py", line 97, in __call__
+    rendered = toolbar.render_toolbar()
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/debug_toolbar/toolbar.py", line 84, in render_toolbar
+    return render_to_string("debug_toolbar/base.html", context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/test/utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/template/defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/urls/base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'djdt' is not a registered namespace
+ERROR 2026-06-22 18:19:33,651 basehttp 6930 135271175681728 "OPTIONS /api/auth/logout/ HTTP/1.1" 500 143494
+ERROR 2026-06-22 18:26:58,069 log 6930 135271175681728 Internal Server Error: /api/health/
+Traceback (most recent call last):
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/urls/base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^
+KeyError: 'djdt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/debug_toolbar/middleware.py", line 97, in __call__
+    rendered = toolbar.render_toolbar()
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/debug_toolbar/toolbar.py", line 84, in render_toolbar
+    return render_to_string("debug_toolbar/base.html", context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/test/utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/template/defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/urls/base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'djdt' is not a registered namespace
+ERROR 2026-06-22 18:26:58,076 basehttp 6930 135271175681728 "GET /api/health/ HTTP/1.1" 500 141850
+ERROR 2026-06-22 18:50:57,889 log 18716 137991859205824 Internal Server Error: /api/auth/login/
+Traceback (most recent call last):
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/urls/base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^
+KeyError: 'djdt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/debug_toolbar/middleware.py", line 97, in __call__
+    rendered = toolbar.render_toolbar()
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/debug_toolbar/toolbar.py", line 84, in render_toolbar
+    return render_to_string("debug_toolbar/base.html", context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/test/utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/template/defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/urls/base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'djdt' is not a registered namespace
+ERROR 2026-06-22 18:50:57,893 basehttp 18716 137991859205824 "POST /api/auth/login/ HTTP/1.1" 500 141905
+ERROR 2026-06-22 18:51:19,197 log 18716 137991859205824 Internal Server Error: /api/health/
+Traceback (most recent call last):
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/urls/base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^
+KeyError: 'djdt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/debug_toolbar/middleware.py", line 97, in __call__
+    rendered = toolbar.render_toolbar()
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/debug_toolbar/toolbar.py", line 84, in render_toolbar
+    return render_to_string("debug_toolbar/base.html", context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/test/utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/template/defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/urls/base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'djdt' is not a registered namespace
+ERROR 2026-06-22 18:51:19,201 basehttp 18716 137991859205824 "GET /api/health/ HTTP/1.1" 500 141850
+ERROR 2026-06-22 18:51:44,340 log 18716 137991859205824 Internal Server Error: /api/auth/login/
+Traceback (most recent call last):
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/urls/base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^
+KeyError: 'djdt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/debug_toolbar/middleware.py", line 97, in __call__
+    rendered = toolbar.render_toolbar()
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/debug_toolbar/toolbar.py", line 84, in render_toolbar
+    return render_to_string("debug_toolbar/base.html", context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/test/utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/template/defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yihunebelay/Videos/test (6)/test/backend/venv/lib/python3.12/site-packages/django/urls/base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'djdt' is not a registered namespace
+ERROR 2026-06-22 18:51:44,342 basehttp 18716 137991859205824 "OPTIONS /api/auth/login/ HTTP/1.1" 500 143483
+WARNING 2026-06-22 18:53:34,334 log 19918 140163404527296 Unauthorized: /api/auth/me/
+WARNING 2026-06-22 18:53:34,338 basehttp 19918 140163404527296 "GET /api/auth/me/ HTTP/1.1" 401 478
+WARNING 2026-06-22 18:53:34,514 log 19918 140163404527296 Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-22 18:53:34,514 basehttp 19918 140163404527296 "POST /api/auth/token/refresh/ HTTP/1.1" 401 221
+WARNING 2026-06-22 18:59:40,937 log 19918 140163404527296 Unauthorized: /api/auth/me/
+WARNING 2026-06-22 18:59:40,942 basehttp 19918 140163404527296 "GET /api/auth/me/ HTTP/1.1" 401 478
+WARNING 2026-06-22 18:59:41,001 log 19918 140163404527296 Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-22 18:59:41,001 basehttp 19918 140163404527296 "POST /api/auth/token/refresh/ HTTP/1.1" 401 221
+WARNING 2026-06-22 19:02:01,367 log 19918 140163404527296 Unauthorized: /api/auth/me/
+WARNING 2026-06-22 19:02:01,471 basehttp 19918 140163404527296 "GET /api/auth/me/ HTTP/1.1" 401 478
+WARNING 2026-06-22 19:02:01,520 log 19918 140163404527296 Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-22 19:02:01,520 basehttp 19918 140163404527296 "POST /api/auth/token/refresh/ HTTP/1.1" 401 221
+WARNING 2026-06-22 19:03:38,739 log 19918 140163404527296 Unauthorized: /api/auth/me/
+WARNING 2026-06-22 19:03:38,742 basehttp 19918 140163404527296 "GET /api/auth/me/ HTTP/1.1" 401 478
+WARNING 2026-06-22 19:03:38,792 log 19918 140163404527296 Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-22 19:03:38,793 basehttp 19918 140163404527296 "POST /api/auth/token/refresh/ HTTP/1.1" 401 221
+WARNING 2026-06-22 19:05:22,430 log 19918 140163392988864 Not Found: /api/admin/dashboard/
+WARNING 2026-06-22 19:05:22,431 basehttp 19918 140163392988864 "GET /api/admin/dashboard/ HTTP/1.1" 404 18428
+WARNING 2026-06-22 19:05:22,521 log 19918 140163384596160 Not Found: /api/admin/dashboard/
+WARNING 2026-06-22 19:05:22,522 basehttp 19918 140163384596160 "GET /api/admin/dashboard/ HTTP/1.1" 404 18428
+WARNING 2026-06-22 19:05:22,580 log 19918 140163392988864 Not Found: /api/admin/platform-stats/
+WARNING 2026-06-22 19:05:22,580 basehttp 19918 140163392988864 "GET /api/admin/platform-stats/ HTTP/1.1" 404 18448
+WARNING 2026-06-22 19:05:22,654 log 19918 140163384596160 Not Found: /api/admin/platform-stats/
+WARNING 2026-06-22 19:05:22,654 basehttp 19918 140163384596160 "GET /api/admin/platform-stats/ HTTP/1.1" 404 18448
+WARNING 2026-06-22 19:05:28,171 log 19918 140163384596160 Not Found: /api/admin/users/
+WARNING 2026-06-22 19:05:28,171 basehttp 19918 140163384596160 "GET /api/admin/users/?search=&page=1&page_size=20 HTTP/1.1" 404 18484
+WARNING 2026-06-22 19:05:28,263 log 19918 140163392988864 Not Found: /api/admin/users/
+WARNING 2026-06-22 19:05:28,265 basehttp 19918 140163392988864 "GET /api/admin/users/?search=&page=1&page_size=20 HTTP/1.1" 404 18484
+WARNING 2026-06-22 19:05:29,300 log 19918 140163392988864 Not Found: /api/organizations/admin/organizations/all-list/
+WARNING 2026-06-22 19:05:29,301 basehttp 19918 140163392988864 "GET /api/organizations/admin/organizations/all-list/?search=&page=1&page_size=20 HTTP/1.1" 404 21909
+WARNING 2026-06-22 19:05:29,386 log 19918 140163384596160 Not Found: /api/organizations/admin/organizations/all-list/
+WARNING 2026-06-22 19:05:29,387 basehttp 19918 140163384596160 "GET /api/organizations/admin/organizations/all-list/?search=&page=1&page_size=20 HTTP/1.1" 404 21909
+WARNING 2026-06-22 19:05:30,368 log 19918 140163384596160 Not Found: /api/admin/holders/
+WARNING 2026-06-22 19:05:30,368 basehttp 19918 140163384596160 "GET /api/admin/holders/?search=&page=1&page_size=20 HTTP/1.1" 404 18492
+WARNING 2026-06-22 19:05:30,438 log 19918 140163392988864 Not Found: /api/admin/holders/
+WARNING 2026-06-22 19:05:30,439 basehttp 19918 140163392988864 "GET /api/admin/holders/?search=&page=1&page_size=20 HTTP/1.1" 404 18492
+WARNING 2026-06-22 19:05:31,171 log 19918 140163384596160 Not Found: /api/admin/credentials/
+WARNING 2026-06-22 19:05:31,172 basehttp 19918 140163384596160 "GET /api/admin/credentials/?search=&page=1&page_size=20 HTTP/1.1" 404 18508
+WARNING 2026-06-22 19:05:31,241 log 19918 140163392988864 Not Found: /api/admin/credentials/
+WARNING 2026-06-22 19:05:31,241 basehttp 19918 140163392988864 "GET /api/admin/credentials/?search=&page=1&page_size=20 HTTP/1.1" 404 18508
+WARNING 2026-06-22 19:05:32,033 log 19918 140163392988864 Not Found: /api/admin/integrations/
+WARNING 2026-06-22 19:05:32,034 basehttp 19918 140163392988864 "GET /api/admin/integrations/ HTTP/1.1" 404 18440
+WARNING 2026-06-22 19:05:32,103 log 19918 140163384596160 Not Found: /api/admin/integrations/
+WARNING 2026-06-22 19:05:32,103 basehttp 19918 140163384596160 "GET /api/admin/integrations/ HTTP/1.1" 404 18440
+WARNING 2026-06-22 19:05:33,850 log 19918 140163384596160 Not Found: /api/admin/credentials/
+WARNING 2026-06-22 19:05:33,850 basehttp 19918 140163384596160 "GET /api/admin/credentials/?search=&page=1&page_size=20 HTTP/1.1" 404 18508
+WARNING 2026-06-22 19:05:33,881 log 19918 140163392988864 Not Found: /api/admin/credentials/
+WARNING 2026-06-22 19:05:33,881 basehttp 19918 140163392988864 "GET /api/admin/credentials/?search=&page=1&page_size=20 HTTP/1.1" 404 18508
+WARNING 2026-06-22 19:05:34,789 log 19918 140163392988864 Not Found: /api/admin/verifications/
+WARNING 2026-06-22 19:05:34,790 basehttp 19918 140163392988864 "GET /api/admin/verifications/?search=&page=1&page_size=20 HTTP/1.1" 404 18516
+WARNING 2026-06-22 19:05:34,858 log 19918 140163384596160 Not Found: /api/admin/verifications/
+WARNING 2026-06-22 19:05:34,860 basehttp 19918 140163384596160 "GET /api/admin/verifications/?search=&page=1&page_size=20 HTTP/1.1" 404 18516
+WARNING 2026-06-22 19:05:35,968 log 19918 140163384596160 Not Found: /api/audit-logs/
+WARNING 2026-06-22 19:05:35,968 basehttp 19918 140163384596160 "GET /api/audit-logs/?search=&page=1&page_size=30 HTTP/1.1" 404 18480
+WARNING 2026-06-22 19:05:36,038 log 19918 140163392988864 Not Found: /api/audit-logs/
+WARNING 2026-06-22 19:05:36,039 basehttp 19918 140163392988864 "GET /api/audit-logs/?search=&page=1&page_size=30 HTTP/1.1" 404 18480
+WARNING 2026-06-22 19:05:59,196 log 19918 140163392988864 Not Found: /api/admin/reports/synchronization/
+WARNING 2026-06-22 19:05:59,199 basehttp 19918 140163392988864 "GET /api/admin/reports/synchronization/ HTTP/1.1" 404 18486
+WARNING 2026-06-22 19:05:59,255 log 19918 140163161253568 Not Found: /api/admin/reports/organizations/
+WARNING 2026-06-22 19:05:59,270 basehttp 19918 140163161253568 "GET /api/admin/reports/organizations/ HTTP/1.1" 404 18478
+WARNING 2026-06-22 19:05:59,282 log 19918 140163404527296 Not Found: /api/admin/reports/verifications/
+WARNING 2026-06-22 19:05:59,287 basehttp 19918 140163404527296 "GET /api/admin/reports/verifications/ HTTP/1.1" 404 18476
+WARNING 2026-06-22 19:05:59,299 log 19918 140163151812288 Not Found: /api/admin/reports/synchronization/
+WARNING 2026-06-22 19:05:59,299 basehttp 19918 140163151812288 "GET /api/admin/reports/synchronization/ HTTP/1.1" 404 18484
+WARNING 2026-06-22 19:05:59,333 log 19918 140163151812288 Not Found: /api/admin/reports/organizations/
+WARNING 2026-06-22 19:05:59,335 basehttp 19918 140163151812288 "GET /api/admin/reports/organizations/ HTTP/1.1" 404 18476
+WARNING 2026-06-22 19:05:59,361 log 19918 140163161253568 Not Found: /api/admin/reports/verifications/
+WARNING 2026-06-22 19:05:59,361 basehttp 19918 140163161253568 "GET /api/admin/reports/verifications/ HTTP/1.1" 404 18476
+WARNING 2026-06-22 19:05:59,903 log 19918 140163161253568 Not Found: /api/admin/profile/
+WARNING 2026-06-22 19:05:59,903 basehttp 19918 140163161253568 "GET /api/admin/profile/ HTTP/1.1" 404 18420
+WARNING 2026-06-22 19:05:59,969 log 19918 140163151812288 Not Found: /api/admin/profile/
+WARNING 2026-06-22 19:05:59,969 basehttp 19918 140163151812288 "GET /api/admin/profile/ HTTP/1.1" 404 18420
+WARNING 2026-06-22 19:06:02,540 log 19918 140163151812288 Bad Request: /api/auth/logout/
+WARNING 2026-06-22 19:06:02,540 basehttp 19918 140163151812288 "POST /api/auth/logout/ HTTP/1.1" 400 66
+WARNING 2026-06-22 19:06:56,170 log 25102 134857309009600 Not Found: /api/issuer/notifications/stream/
+WARNING 2026-06-22 19:06:56,174 basehttp 25102 134857309009600 "GET /api/issuer/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyMTQ1MzE1LCJpYXQiOjE3ODIxNDQ0MTUsImp0aSI6IjM0OWU3ZDIwNTQzZDQwNjA5OWJjMTgxZjdmOGRiODZlIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.RuH2DD7zsc9bHl1ZC6YjJ3kXS9O-tIV3TRpwcu5uzt4 HTTP/1.1" 404 19090
+WARNING 2026-06-22 19:06:56,248 log 25102 134857334187712 Not Found: /api/issuer/organization/
+WARNING 2026-06-22 19:06:56,270 basehttp 25102 134857334187712 "GET /api/issuer/organization/ HTTP/1.1" 404 18446
+WARNING 2026-06-22 19:06:56,272 log 25102 134857342580416 Not Found: /api/issuer/notifications/unread-count/
+WARNING 2026-06-22 19:06:56,277 log 25102 134857317402304 Forbidden: /api/integration/analytics/
+WARNING 2026-06-22 19:06:56,295 basehttp 25102 134857342580416 "GET /api/issuer/notifications/unread-count/ HTTP/1.1" 404 18502
+WARNING 2026-06-22 19:06:56,307 basehttp 25102 134857317402304 "GET /api/integration/analytics/ HTTP/1.1" 403 109
+WARNING 2026-06-22 19:06:56,428 log 25102 134857325795008 Not Found: /api/issuer/organization/
+WARNING 2026-06-22 19:06:56,436 basehttp 25102 134857325795008 "GET /api/issuer/organization/ HTTP/1.1" 404 18446
+WARNING 2026-06-22 19:06:56,558 log 25102 134857334187712 Not Found: /api/issuer/notifications/unread-count/
+WARNING 2026-06-22 19:06:56,572 log 25102 134857317402304 Forbidden: /api/integration/analytics/
+WARNING 2026-06-22 19:06:56,573 basehttp 25102 134857334187712 "GET /api/issuer/notifications/unread-count/ HTTP/1.1" 404 18502
+WARNING 2026-06-22 19:06:56,574 basehttp 25102 134857317402304 "GET /api/integration/analytics/ HTTP/1.1" 403 109
+WARNING 2026-06-22 19:06:56,606 log 25102 134857342580416 Not Found: /api/issuer/organization/
+WARNING 2026-06-22 19:06:56,616 basehttp 25102 134857342580416 "GET /api/issuer/organization/ HTTP/1.1" 404 18446
+WARNING 2026-06-22 19:06:56,670 log 25102 134857317402304 Not Found: /api/issuer/organization/
+WARNING 2026-06-22 19:06:56,671 basehttp 25102 134857317402304 "GET /api/issuer/organization/ HTTP/1.1" 404 18444
+WARNING 2026-06-22 19:07:01,265 log 25102 134857317402304 Not Found: /api/issuer/notifications/stream/
+WARNING 2026-06-22 19:07:01,265 basehttp 25102 134857317402304 "GET /api/issuer/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyMTQ1MzE1LCJpYXQiOjE3ODIxNDQ0MTUsImp0aSI6IjM0OWU3ZDIwNTQzZDQwNjA5OWJjMTgxZjdmOGRiODZlIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.RuH2DD7zsc9bHl1ZC6YjJ3kXS9O-tIV3TRpwcu5uzt4 HTTP/1.1" 404 19088
+WARNING 2026-06-22 19:07:11,315 log 25102 134857317402304 Not Found: /api/issuer/notifications/stream/
+WARNING 2026-06-22 19:07:11,315 basehttp 25102 134857317402304 "GET /api/issuer/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyMTQ1MzE1LCJpYXQiOjE3ODIxNDQ0MTUsImp0aSI6IjM0OWU3ZDIwNTQzZDQwNjA5OWJjMTgxZjdmOGRiODZlIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.RuH2DD7zsc9bHl1ZC6YjJ3kXS9O-tIV3TRpwcu5uzt4 HTTP/1.1" 404 19088
+WARNING 2026-06-22 19:07:31,418 log 25102 134857317402304 Not Found: /api/issuer/notifications/stream/
+WARNING 2026-06-22 19:07:31,419 basehttp 25102 134857317402304 "GET /api/issuer/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyMTQ1MzE1LCJpYXQiOjE3ODIxNDQ0MTUsImp0aSI6IjM0OWU3ZDIwNTQzZDQwNjA5OWJjMTgxZjdmOGRiODZlIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.RuH2DD7zsc9bHl1ZC6YjJ3kXS9O-tIV3TRpwcu5uzt4 HTTP/1.1" 404 19088
+WARNING 2026-06-22 19:09:05,914 log 25102 134857325795008 Not Found: /api/issuer/notifications/stream/
+WARNING 2026-06-22 19:09:05,948 log 25102 134857334187712 Not Found: /api/issuer/organization/
+WARNING 2026-06-22 19:09:05,948 basehttp 25102 134857334187712 "GET /api/issuer/organization/ HTTP/1.1" 404 18446
+WARNING 2026-06-22 19:09:05,929 log 25102 134857426466496 Not Found: /api/issuer/notifications/unread-count/
+WARNING 2026-06-22 19:09:05,973 basehttp 25102 134857426466496 "GET /api/issuer/notifications/unread-count/ HTTP/1.1" 404 18502
+WARNING 2026-06-22 19:09:05,974 basehttp 25102 134857325795008 "GET /api/issuer/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyMTQ1MzE1LCJpYXQiOjE3ODIxNDQ0MTUsImp0aSI6IjM0OWU3ZDIwNTQzZDQwNjA5OWJjMTgxZjdmOGRiODZlIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.RuH2DD7zsc9bHl1ZC6YjJ3kXS9O-tIV3TRpwcu5uzt4 HTTP/1.1" 404 19090
+WARNING 2026-06-22 19:09:06,216 log 25102 134857325795008 Not Found: /api/issuer/notifications/unread-count/
+WARNING 2026-06-22 19:09:06,222 log 25102 134857309009600 Not Found: /api/issuer/organization/
+WARNING 2026-06-22 19:09:06,235 basehttp 25102 134857309009600 "GET /api/issuer/organization/ HTTP/1.1" 404 18446
+WARNING 2026-06-22 19:09:06,235 basehttp 25102 134857325795008 "GET /api/issuer/notifications/unread-count/ HTTP/1.1" 404 18502
+WARNING 2026-06-22 19:18:05,633 log 29038 134426805663424 Not Found: /api/issuer/notifications/unread-count/
+WARNING 2026-06-22 19:18:05,636 basehttp 29038 134426805663424 "GET /api/issuer/notifications/unread-count/ HTTP/1.1" 404 18500
+WARNING 2026-06-22 19:18:09,099 log 29038 134426805663424 Not Found: /api/issuer/notifications/stream/
+WARNING 2026-06-22 19:18:09,100 basehttp 29038 134426805663424 "GET /api/issuer/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyMTQ1MzE1LCJpYXQiOjE3ODIxNDQ0MTUsImp0aSI6IjM0OWU3ZDIwNTQzZDQwNjA5OWJjMTgxZjdmOGRiODZlIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.RuH2DD7zsc9bHl1ZC6YjJ3kXS9O-tIV3TRpwcu5uzt4 HTTP/1.1" 404 19088
+WARNING 2026-06-22 19:19:05,626 log 29569 125218572990144 Not Found: /api/issuer/notifications/unread-count/
+WARNING 2026-06-22 19:19:05,626 basehttp 29569 125218572990144 "GET /api/issuer/notifications/unread-count/ HTTP/1.1" 404 18500
+WARNING 2026-06-22 19:19:09,126 log 29569 125218572990144 Not Found: /api/issuer/notifications/stream/
+WARNING 2026-06-22 19:19:09,126 basehttp 29569 125218572990144 "GET /api/issuer/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyMTQ1MzE1LCJpYXQiOjE3ODIxNDQ0MTUsImp0aSI6IjM0OWU3ZDIwNTQzZDQwNjA5OWJjMTgxZjdmOGRiODZlIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.RuH2DD7zsc9bHl1ZC6YjJ3kXS9O-tIV3TRpwcu5uzt4 HTTP/1.1" 404 19088
+WARNING 2026-06-22 19:19:57,115 log 29569 125218572990144 Not Found: /api/issuer/notifications/
+WARNING 2026-06-22 19:19:57,119 basehttp 29569 125218572990144 "GET /api/issuer/notifications/ HTTP/1.1" 404 18449
+WARNING 2026-06-22 19:19:57,225 log 29569 125218495395520 Not Found: /api/issuer/notifications/
+WARNING 2026-06-22 19:19:57,228 basehttp 29569 125218495395520 "GET /api/issuer/notifications/ HTTP/1.1" 404 18448
+WARNING 2026-06-22 19:20:05,616 log 29569 125218495395520 Not Found: /api/issuer/notifications/unread-count/
+WARNING 2026-06-22 19:20:05,617 basehttp 29569 125218495395520 "GET /api/issuer/notifications/unread-count/ HTTP/1.1" 404 18500
+WARNING 2026-06-22 19:20:09,165 log 29569 125218495395520 Not Found: /api/issuer/notifications/stream/
+WARNING 2026-06-22 19:20:09,166 basehttp 29569 125218495395520 "GET /api/issuer/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyMTQ1MzE1LCJpYXQiOjE3ODIxNDQ0MTUsImp0aSI6IjM0OWU3ZDIwNTQzZDQwNjA5OWJjMTgxZjdmOGRiODZlIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.RuH2DD7zsc9bHl1ZC6YjJ3kXS9O-tIV3TRpwcu5uzt4 HTTP/1.1" 404 19088
+WARNING 2026-06-22 19:21:05,624 log 29569 125218495395520 Not Found: /api/issuer/notifications/unread-count/
+WARNING 2026-06-22 19:21:05,625 basehttp 29569 125218495395520 "GET /api/issuer/notifications/unread-count/ HTTP/1.1" 404 18500
+WARNING 2026-06-22 19:21:09,201 log 29569 125218495395520 Not Found: /api/issuer/notifications/stream/
+WARNING 2026-06-22 19:21:09,202 basehttp 29569 125218495395520 "GET /api/issuer/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyMTQ1MzE1LCJpYXQiOjE3ODIxNDQ0MTUsImp0aSI6IjM0OWU3ZDIwNTQzZDQwNjA5OWJjMTgxZjdmOGRiODZlIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.RuH2DD7zsc9bHl1ZC6YjJ3kXS9O-tIV3TRpwcu5uzt4 HTTP/1.1" 404 19088
+WARNING 2026-06-22 19:22:06,178 log 29569 125218495395520 Not Found: /api/issuer/notifications/unread-count/
+WARNING 2026-06-22 19:22:06,188 basehttp 29569 125218495395520 "GET /api/issuer/notifications/unread-count/ HTTP/1.1" 404 18501
+WARNING 2026-06-22 19:22:10,078 log 29569 125218495395520 Not Found: /api/issuer/notifications/stream/
+WARNING 2026-06-22 19:22:10,079 basehttp 29569 125218495395520 "GET /api/issuer/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyMTQ1MzE1LCJpYXQiOjE3ODIxNDQ0MTUsImp0aSI6IjM0OWU3ZDIwNTQzZDQwNjA5OWJjMTgxZjdmOGRiODZlIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.RuH2DD7zsc9bHl1ZC6YjJ3kXS9O-tIV3TRpwcu5uzt4 HTTP/1.1" 404 19088
+WARNING 2026-06-22 19:23:11,059 log 29569 125218495395520 Not Found: /api/issuer/notifications/stream/
+WARNING 2026-06-22 19:23:11,060 basehttp 29569 125218495395520 "GET /api/issuer/notifications/stream/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgyMTQ1MzE1LCJpYXQiOjE3ODIxNDQ0MTUsImp0aSI6IjM0OWU3ZDIwNTQzZDQwNjA5OWJjMTgxZjdmOGRiODZlIiwidXNlcl9pZCI6IjkzOWFmN2UzLTgzMWItNGU3ZC04MmM5LTQxMTAxMmY5Y2Y5YSIsInJvbGUiOiJpc3N1ZXIifQ.RuH2DD7zsc9bHl1ZC6YjJ3kXS9O-tIV3TRpwcu5uzt4 HTTP/1.1" 404 19088
+WARNING 2026-06-22 19:23:15,092 log 29569 125218495395520 Not Found: /api/issuer/notifications/unread-count/
+WARNING 2026-06-22 19:23:15,093 basehttp 29569 125218495395520 "GET /api/issuer/notifications/unread-count/ HTTP/1.1" 404 18500
