@@ -35,7 +35,7 @@ export default function AboutScreen() {
           <View style={[styles.logoWrap, { backgroundColor: colors.primarySurface, borderRadius: 20 }]}>
             <Image source={require('../../assets/images/icon.png')} style={styles.logo} contentFit="contain" />
           </View>
-          <Text style={[styles.appName, { color: colors.text, fontFamily: 'Poppins_700Bold' }]}>Debo Wallet</Text>
+          <Text style={[styles.appName, { color: colors.text, fontFamily: 'Poppins_700Bold' }]}>Credential Wallet</Text>
           <Text style={[styles.appVersion, { color: colors.textMuted, fontFamily: 'Poppins_400Regular' }]}>Version 1.0.0 (Build 100)</Text>
           <View style={[styles.badge, { backgroundColor: colors.primarySurface, borderRadius: 20 }]}>
             <Text style={[styles.badgeText, { color: colors.primary, fontFamily: 'Poppins_500Medium' }]}>
@@ -47,7 +47,7 @@ export default function AboutScreen() {
         {/* Description */}
         <View style={[styles.descCard, { backgroundColor: colors.card, borderColor: colors.border, borderRadius: colors.radius }]}>
           <Text style={[styles.desc, { color: colors.textMuted, fontFamily: 'Poppins_400Regular' }]}>
-            Debo Wallet is the official Holder Wallet of the National Digital Credential Ecosystem (NDCE) of the Federal Democratic Republic of Ethiopia. It enables citizens to securely store, manage, and share their digital credentials.
+           Credential Wallet is the official Holder Wallet of the National Digital Credential Ecosystem (NDCE) of the Federal Democratic Republic of Ethiopia. It enables citizens to securely store, manage, and share their digital credentials.
           </Text>
         </View>
 
