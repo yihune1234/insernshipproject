@@ -17,14 +17,12 @@
 </p>
 
 <p>
-  <em>Prepared and edited from the original document by <strong>Yihune B.,Bealu G,Yohannes G,</strong></em>
+  <em>Prepared by <strong>Yihune B., Bealu G., Yohannes G.</strong></em>
 </p>
 
 <br>
 
 </div>
-
-<!-- Badges row end -->
 
 ## Table of Contents
 
@@ -38,12 +36,10 @@
 - [Security](#security)
 - [Getting Started](#getting-started)
 - [Testing the Federated Flow](#testing-the-federated-flow)
-- [Installation](#installation)
 - [Deployment](#deployment)
-- [Testing](#testing)
-- [Future Enhancements](#future-enhancements)
+- [Test Accounts](#test-accounts)
+- [Project Report](#project-report)
 - [Documentation](#documentation)
-- [Summary](#summary)
 
 ---
 
@@ -55,10 +51,10 @@ The **Digital Wallet System** is an enterprise-grade platform designed to issue,
 
 Replace slow, manual, error-prone credential processes with **cryptographically secure, privacy-respecting digital credentials** that are:
 
-- Easy to issue  
-- Easy to validate  
-- Tamper-proof and immutable  
-- Interoperable across platforms  
+- Easy to issue
+- Easy to validate
+- Tamper-proof and immutable
+- Interoperable across platforms
 - Fully controlled by the credential holder
 
 ### Key Capabilities
@@ -68,7 +64,7 @@ Replace slow, manual, error-prone credential processes with **cryptographically 
 | **Issuance**     | Organizations issue digital credentials (degrees, licenses, certificates)  |
 | **Storage**      | Holders securely store credentials in their personal digital wallet        |
 | **Presentation** | Holders selectively share credentials with verifiers                       |
-| **Verification** | Verifiers validate authenticity & revocation status in real-time           |
+| **Verification** | Verifiers validate authenticity and revocation status in real-time         |
 | **Revocation**   | Issuers can revoke credentials that are no longer valid                    |
 | **Audit**        | Full traceable logs for system administrators                              |
 
@@ -78,10 +74,10 @@ Replace slow, manual, error-prone credential processes with **cryptographically 
 
 ### High-Level Layers
 
-1. **Frontend** — Web + Mobile apps (role-specific)  
-2. **API Gateway** — Django REST Framework + JWT authentication  
-3. **Business Logic** — Users, Organizations, Credentials, Auditing  
-4. **Data Access** — Django ORM  
+1. **Frontend** — Web + Mobile apps (role-specific)
+2. **API Gateway** — Django REST Framework + JWT authentication
+3. **Business Logic** — Users, Organizations, Credentials, Auditing
+4. **Data Access** — Django ORM
 5. **Database** — PostgreSQL (production) / SQLite (development)
 
 ### System Components
@@ -89,7 +85,7 @@ Replace slow, manual, error-prone credential processes with **cryptographically 
 | Component              | Technology                        | Responsibility                                      |
 |------------------------|-----------------------------------|-----------------------------------------------------|
 | Backend API            | Django + DRF                      | Business logic, persistence, auth                   |
-| Frontend Applications  | React.js • React Native • Tailwind CSS | Role-specific UI/UX (web + mobile)            |
+| Frontend Applications  | React.js, React Native, Tailwind CSS | Role-specific UI/UX (web + mobile)            |
 | Database               | PostgreSQL or SQLite              | Structured persistent storage                       |
 | Authentication         | JWT + SimpleJWT                   | Secure, stateless sessions                          |
 | DID Management         | Custom implementation             | Support for decentralized identifiers               |
@@ -100,22 +96,21 @@ Replace slow, manual, error-prone credential processes with **cryptographically 
 
 ### Backend
 
-- Django **6.0**  
-- Django REST Framework **3.15+**  
-- Simple JWT  
-- PostgreSQL **14+** (prod) • SQLite (dev)  
-- Redis (optional caching)  
-- Celery (optional background tasks)  
-- Docker + Docker Compose  
+- Django 6.0
+- Django REST Framework 3.15+
+- Simple JWT
+- PostgreSQL 14+ (prod) / SQLite (dev)
+- Redis (optional caching)
+- Celery (optional background tasks)
+- Docker + Docker Compose
 - Gunicorn + Nginx
 
 ### Frontend
 
-- React.js  
-- React Native  
-- Tailwind CSS  
-- JavaScript / TypeScript  
-- Fetch API or Axios  
+- React.js
+- React Native
+- Tailwind CSS
+- JavaScript / TypeScript
 - Token-based authentication
 
 ---
@@ -124,27 +119,27 @@ Replace slow, manual, error-prone credential processes with **cryptographically 
 
 ### 1. Multi-Actor Roles
 
-- **Admin** — system-wide management, audit, configuration  
-- **Holder** — credential wallet, requests, presentations  
-- **Issuer** — credential approval, issuance, revocation  
+- **Admin** — system-wide management, audit, configuration
+- **Holder** — credential wallet, requests, presentations
+- **Issuer** — credential approval, issuance, revocation
 - **Verifier** — credential validation, history, bulk support
 
 ### 2. Full Credential Lifecycle
 
-1. Request credential  
-2. Review & approval  
-3. Issuance  
-4. Secure storage in wallet  
-5. Presentation  
-6. Verification  
+1. Request credential
+2. Review and approval
+3. Issuance
+4. Secure storage in wallet
+5. Presentation
+6. Verification
 7. Revocation / expiration
 
 ### 3. Standards Alignment
 
-- W3C Verifiable Credentials Data Model  
-- Decentralized Identifiers (DIDs)  
-- Selective disclosure support  
-- Real-time status & revocation checks
+- W3C Verifiable Credentials Data Model
+- Decentralized Identifiers (DIDs)
+- Selective disclosure support
+- Real-time status and revocation checks
 
 ---
 
@@ -152,28 +147,28 @@ Replace slow, manual, error-prone credential processes with **cryptographically 
 
 Modern web + mobile interfaces built with **React** family.
 
-### 🛠 Admin Portal
-- Manage users, organizations, issuers, verifiers  
-- Approve entities  
-- Audit log viewer  
+### Admin Portal
+- Manage users, organizations, issuers, verifiers
+- Approve entities
+- Audit log viewer
 - System configuration
 
-### 👤 Holder Wallet
-- View & organize credentials  
-- Request new credentials  
-- Create presentations  
+### Holder Wallet
+- View and organize credentials
+- Request new credentials
+- Create presentations
 - Status tracking
 
-### 🏭 Issuer Portal
-- Review credential requests  
-- Issue & sign credentials  
-- Revoke / suspend credentials  
+### Issuer Portal
+- Review credential requests
+- Issue and sign credentials
+- Revoke / suspend credentials
 - Issuance analytics
 
-### 🔍 Verifier Portal
-- Submit & verify credentials  
-- View verification results  
-- History & audit trail  
+### Verifier Portal
+- Submit and verify credentials
+- View verification results
+- History and audit trail
 - Bulk verification support
 
 ---
@@ -182,17 +177,17 @@ Modern web + mobile interfaces built with **React** family.
 
 **30+ table normalized schema** covering:
 
-- Lookup / domain tables  
-- Core entities (users, orgs, credentials)  
-- Profiles & relationships  
-- Transactions & audit logs
+- Lookup / domain tables
+- Core entities (users, orgs, credentials)
+- Profiles and relationships
+- Transactions and audit logs
 
 ### Design Principles
 
 | Principle              | How it's implemented                              |
 |------------------------|---------------------------------------------------|
 | 3NF                    | No redundancy, clean relational structure         |
-| Referential Integrity  | Foreign keys + constraints                        |
+| Referential Integrity  | Foreign keys and constraints                      |
 | UUID Primary Keys      | Distributed-system friendly                       |
 | Business Unique Keys   | Email, DID, etc. enforced unique                  |
 | Audit Timestamps       | created_at, updated_at on most models             |
@@ -207,7 +202,7 @@ Modern web + mobile interfaces built with **React** family.
 
 | Endpoint                        | Method | Description                          |
 |---------------------------------|--------|--------------------------------------|
-| `/api/users/login/`             | POST   | Obtain JWT access & refresh tokens   |
+| `/api/users/login/`             | POST   | Obtain JWT access and refresh tokens |
 | `/api/users/token/refresh/`     | POST   | Refresh access token                 |
 | `/api/users/register/`          | POST   | Register new holder                  |
 | `/api/users/me/`                | GET    | Current authenticated user profile   |
@@ -252,13 +247,13 @@ Modern web + mobile interfaces built with **React** family.
 
 ## Security
 
-- HTTPS / TLS everywhere  
-- JWT authentication (SimpleJWT)  
-- Argon2 / PBKDF2 password hashing  
-- Role-based & organization-level authorization  
-- Field-level encryption for sensitive data  
-- Credential cryptographic integrity checks  
-- Django ORM SQL injection protection  
+- HTTPS / TLS everywhere
+- JWT authentication (SimpleJWT)
+- Argon2 / PBKDF2 password hashing
+- Role-based and organization-level authorization
+- Field-level encryption for sensitive data
+- Credential cryptographic integrity checks
+- Django ORM SQL injection protection
 - Comprehensive audit logging
 
 ---
@@ -267,25 +262,18 @@ Modern web + mobile interfaces built with **React** family.
 
 ### Prerequisites
 
-Ensure the following are installed before proceeding:
-
 - **Node.js** 20+
 - **Python** 3.12+
-- **Docker**
-- **Docker Compose**
+- **Docker** and **Docker Compose**
 
-### 1. Clone the Repository
+### Quick Start (Docker)
 
 ```bash
+# 1. Clone the repository
 git clone https://github.com/yourusername/digital-credential-wallet.git
 cd digital-credential-wallet
-```
 
-### 2. Configure Environment Files
-
-Copy each service's example environment file and fill in the required values:
-
-```bash
+# 2. Configure environment files
 cp backend/.env.example backend/.env
 cp frontend/.env.example frontend/.env
 cp mobile/.env.example mobile/.env
@@ -293,30 +281,24 @@ cp mock_org_api/.env.example mock_org_api/.env
 ```
 
 > **Important — `backend/.env`:**
-> - `ENCRYPTION_KEY` must be exactly **32 hex bytes** (64 hex characters), e.g. generated with `openssl rand -hex 32`.
+> - `ENCRYPTION_KEY` must be exactly **32 hex bytes** (64 hex characters), generated with `openssl rand -hex 32`.
 > - `SECRET_KEY` must be changed from the default before running in any shared or production environment.
 
-### 3. Start All Services
-
 ```bash
+# 3. Start all services
 docker compose up --build
-```
 
-This starts the backend, frontend, database, and mock org API together.
-
-### 4. Run Database Migrations
-
-```bash
+# 4. Run database migrations
 docker compose exec backend python manage.py migrate
-```
 
-### 5. Create a Superuser
-
-```bash
+# 5. Create a superuser
 docker compose exec backend python manage.py createsuperuser
+
+# 6. Seed test data (optional)
+docker compose exec backend python manage.py shell -c 'exec(open("seed_test_data.py").read())'
 ```
 
-### 6. Access the Platform
+### Access the Platform
 
 | Service        | URL                                              |
 |----------------|--------------------------------------------------|
@@ -327,25 +309,7 @@ docker compose exec backend python manage.py createsuperuser
 | Mock Org API   | http://localhost:4000                            |
 | API docs       | http://localhost:8000/api/schema/swagger-ui/     |
 
-### 7. Seed Test Data (Optional)
-
-```bash
-docker compose exec backend python manage.py shell -c 'exec(open("seed_test_data.py").read())'
-```
-
-### 8. Test API Key for Mock Org API
-
-The mock org API is pre-configured with a test key defined in `mock_org_api/.env`:
-
-```
-test-api-key-change-me
-```
-
-Use this key as the `Authorization` header value (or as configured) when making requests to `http://localhost:4000`.
-
-### Quick Development Setup (Without Docker)
-
-If you prefer to run services individually without Docker:
+### Development Setup (Without Docker)
 
 **Backend**
 ```bash
@@ -374,7 +338,7 @@ npm start
 
 ## Testing the Federated Flow
 
-The **mock org API** running at `http://localhost:4000` simulates an external organization's member database. It allows you to test the full federated credential issuance flow without needing a real third-party integration.
+The **mock org API** running at `http://localhost:4000` simulates external organization member databases. It allows you to test the full federated credential issuance flow without needing a real third-party integration.
 
 ### How it works
 
@@ -401,36 +365,28 @@ Test member records are defined in `mock_org_api/members.json`. Open that file t
 
 ---
 
-## Installation – Quick Start
+## Deployment
+
+### Production Setup
+
+- **Nginx** as the reverse proxy
+- **Gunicorn** as the application server
+- **Django** as the backend service
+- **PostgreSQL** as the primary database
+- Static asset hosting for frontend resources
+
+### Docker Deployment
 
 ```bash
-git clone https://github.com/yourusername/digital-wallet-system.git
-cd digital-wallet-system
+docker-compose up -d
+docker-compose exec web python manage.py migrate
+```
 
-# Create & activate virtual environment
-python -m venv venv
+---
 
-# Windows
-venv\Scripts\activate
+## Test Accounts
 
-# macOS / Linux
-source venv/bin/activate
-
-cd DigitalWallet
-pip install -r requirements.txt
-
-# Apply migrations & create test data
-python manage.py migrate
-python manage.py seed_org_types
-python manage.py create_test_users
-
-# Start server
-python manage.py runserver
-
-**Default local API URL:**  
-`http://127.0.0.1:8000`
-
-### Default Test Accounts
+### Quick Start Test Users
 
 | Role     | Email                      | Password     | Web route (after login)       |
 |----------|----------------------------|--------------|-------------------------------|
@@ -439,43 +395,48 @@ python manage.py runserver
 | Issuer   | issuer@university.edu      | password123  | `/issuer/dashboard`           |
 | Verifier | verifier@government.gov    | password123  | `/verifier/dashboard`         |
 
-Create these accounts with: `python manage.py create_test_users` (from `backend2/`).
+### Comprehensive Test Users
 
-## Deployment
+See [TEST_USERS.md](TEST_USERS.md) for 12 users across all 4 roles (password: `TestPass123!`).
 
-### Production Setup
+---
 
-A typical production deployment includes:
+## Project Report
 
-- **Nginx** as the reverse proxy  
-- **Gunicorn** as the application server  
-- **Django** as the backend service  
-- **PostgreSQL** as the primary database  
-- Static asset hosting for frontend resources  
+A high-level, non-technical overview of the system is available in **[report.md](report.md)**. It covers who uses the system (the four actor roles), how they work together, what has been built, how to continue development, and key lessons learned.
 
-### Docker Deployment
+> If you are new to the project or want a big-picture understanding without technical details, start with `report.md`.
 
-```bash
-docker-compose up -d
-docker-compose exec web python manage.py migrate
+---
 
+## Documentation
 
+- [Project Report (Non-Technical Overview)](report.md)
+- [System Architecture and Technical Decisions](INTEGRATION_ANALYSIS.md)
+- [Integration Analysis Summary](INTEGRATION_ANALYSIS_SUMMARY.md)
+- [Issuer Integration Test Report](backend/ISSUER_INTEGRATION_TEST_REPORT.md)
+- [Test Users Guide](TEST_USERS.md)
+- [Phase 10-12 Implementation Summary](backend/PHASE_10_11_12_SUMMARY.md)
+- [Phase 10-12 Verification Checklist](backend/PHASE_10_11_12_VERIFICATION_CHECKLIST.md)
+- [Mock Organization API README](mock_org_api/README.md)
+
+---
 
 ## Summary
 
-The **Digital Wallet System** is presented as a complete platform for issuing and verifying digital credentials across multiple user roles.
+The **Digital Wallet System** is a complete platform for issuing and verifying digital credentials across multiple user roles.
 
 Its main strengths are:
 
-- Role-based workflows  
-- Full credential lifecycle management  
-- Standards-oriented design (W3C VC alignment)  
-- Security model built around authentication, authorization, and auditing  
+- Role-based workflows
+- Full credential lifecycle management
+- Standards-oriented design (W3C VC alignment)
+- Security model built around authentication, authorization, and auditing
 
-This README improves readability, removes broken character encoding, and presents the original content in a cleaner, more consistent, and professionally attractive format.
+---
 
-**Prepared with care in Addis Ababa • March 2026**  
-**Yihune, Bealu G,Yohannes**
+**Prepared in Addis Ababa • July 2026**  
+**Yihune B., Bealu G., Yohannes G.**
 
 ---
 
